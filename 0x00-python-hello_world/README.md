@@ -26,12 +26,23 @@ guillaume@ubuntu:~/py/0x00$
 ```
 
 ### 2-print.py
-**2-print.py** - is python scripts the prints `"Programming is like building a multilingual puzzle`
+**2-print.py** - A python script that prints `"Programming is like building a multilingual puzzle`
 followed by new line
 
 **USAGE**
 ```
 guillaume@ubuntu:~/py/0x00$ ./2-print.py
 "Programming is like building a multilingual puzzle
+guillaume@ubuntu:~/py/0x00$
+```
+
+### 3-print_number.py
+
+**3-print_number.py** - A python script that print a number stored in variable followed by a string using f-string string formatter to substitute the variable in the output
+
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
+98 Battery street
 guillaume@ubuntu:~/py/0x00$
 ```
