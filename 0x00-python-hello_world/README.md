@@ -76,3 +76,22 @@ guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py
 5 6-concat.py
 guillaume@ubuntu:~/py/0x00$
 ```
+
+### 7-edges.py
+
+**7-edges.py** - This python scripts prints words using the python string slice feature.
+
+* word_first_3 should contain the first 3 letters of the variable word
+* word_last_2 should contain the last 2 letters of the variable word
+* middle_word should contain the value of the variable word without the first and last letters
+
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ ./7-edges.py
+First 3 letters: Hol
+Last 2 letters: on
+Middle word: olberto
+guillaume@ubuntu:~/py/0x00$ wc -l 7-edges.py
+8 7-edges.py
+guillaume@ubuntu:~/py/0x00$
+```
