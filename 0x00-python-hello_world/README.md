@@ -24,3 +24,14 @@ guillaume@ubuntu:~/py/0x00$ ./1-run_inline
 Best School: 98
 guillaume@ubuntu:~/py/0x00$
 ```
+
+### 2-print.py
+**2-print.py** - is python scripts the prints `"Programming is like building a multilingual puzzle`
+followed by new line
+
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ ./2-print.py
+"Programming is like building a multilingual puzzle
+guillaume@ubuntu:~/py/0x00$
+```
