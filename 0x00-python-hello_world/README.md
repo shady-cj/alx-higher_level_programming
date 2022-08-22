@@ -56,3 +56,14 @@ guillaume@ubuntu:~/py/0x00$ ./4-print_float.py
 Float: 3.14
 guillaume@ubuntu:~/py/0x00$
 ```
+
+### 5-print_string.py
+**5-print_string.py** - The pythob script print 3 times a string stored in the variable str, followed by its first 9 characters.
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ ./5-print_string.py
+Holberton SchoolHolberton SchoolHolberton School
+Holberton
+guillaume@ubuntu:~/py/0x00$
+```
+
