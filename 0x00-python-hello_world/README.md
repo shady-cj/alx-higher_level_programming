@@ -95,3 +95,17 @@ guillaume@ubuntu:~/py/0x00$ wc -l 7-edges.py
 8 7-edges.py
 guillaume@ubuntu:~/py/0x00$
 ```
+
+### 8-concat_edges.py
+**8-concat_edges.py** - A python that prints a string from an existing string without using string literals.. 
+it prints `object-oriented programming with Python` from a given string `str = "Python is an interpreted, interactive, object-oriented programming\
+ language that combines remarkable power with very clear syntax"`
+
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ ./8-concat_edges.py
+object-oriented programming with Python
+guillaume@ubuntu:~/py/0x00$ wc -l 8-concat_edges.py
+5 8-concat_edges.py
+guillaume@ubuntu:~/py/0x00$
+```
