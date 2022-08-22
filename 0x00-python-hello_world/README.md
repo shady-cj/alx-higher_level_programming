@@ -8,9 +8,19 @@ Each file is a test on my knowledge on each concept of python
 **0-run** - is a shell script that runs a python script, The python file name would be saved in the
 environment variable **PYFILE**
 
-#### USAGE
+**USAGE**
 ```
 export PYFILE=tests/main.py
 ./0-run 
 ```
 
+### 1-run_inline
+**1-run_inline** - is a shell script that runs Python code. The Python code will be saved in the environment variable $PYCODE
+
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ export PYCODE='print(f"Best School: {88+10}")'
+guillaume@ubuntu:~/py/0x00$ ./1-run_inline
+Best School: 98
+guillaume@ubuntu:~/py/0x00$
+```
