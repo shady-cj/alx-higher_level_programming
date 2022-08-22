@@ -46,3 +46,13 @@ guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
 98 Battery street
 guillaume@ubuntu:~/py/0x00$
 ```
+
+### 4-print_float.py
+**4-print_float.py** - The python scripts prints a floating number with a precision of 2 digits alongside a string
+
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ ./4-print_float.py
+Float: 3.14
+guillaume@ubuntu:~/py/0x00$
+```
