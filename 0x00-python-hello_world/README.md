@@ -139,3 +139,17 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 guillaume@ubuntu:~/py/0x00$
 ```
+
+### 100-write.py
+**100-write.py** - A python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line. to the standard error and exiting with status 1
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ ./100-write.py
+and that piece of art is useful - Dora Korpar, 2015-10-19
+guillaume@ubuntu:~/py/0x00$ echo $?
+1
+guillaume@ubuntu:~/py/0x00$ ./100-write.py 2> q
+guillaume@ubuntu:~/py/0x00$ cat q
+and that piece of art is useful - Dora Korpar, 2015-10-19
+guillaume@ubuntu:~/py/0x00$
+```
