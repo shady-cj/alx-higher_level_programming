@@ -58,7 +58,7 @@ guillaume@ubuntu:~/py/0x00$
 ```
 
 ### 5-print_string.py
-**5-print_string.py** - The pythob script print 3 times a string stored in the variable str, followed by its first 9 characters.
+**5-print_string.py** - The python script print 3 times a string stored in the variable str, followed by its first 9 characters.
 **USAGE**
 ```
 guillaume@ubuntu:~/py/0x00$ ./5-print_string.py
@@ -66,4 +66,13 @@ Holberton SchoolHolberton SchoolHolberton School
 Holberton
 guillaume@ubuntu:~/py/0x00$
 ```
+### 6-concat.py
+**6-concat.py** - This is a python script that prints `Welcome to Holberton School!` from 2 different strings using string concatenation in python
 
+```
+guillaume@ubuntu:~/py/0x00$ ./6-concat.py
+Welcome to Holberton School!
+guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py
+5 6-concat.py
+guillaume@ubuntu:~/py/0x00$
+```
