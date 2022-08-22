@@ -97,7 +97,7 @@ guillaume@ubuntu:~/py/0x00$
 ```
 
 ### 8-concat_edges.py
-**8-concat_edges.py** - A python that prints a string from an existing string without using string literals.. 
+**8-concat_edges.py** - A python script that prints a string from an existing string without using string literals.. 
 it prints `object-oriented programming with Python` from a given string `str = "Python is an interpreted, interactive, object-oriented programming\
  language that combines remarkable power with very clear syntax"`
 
@@ -107,5 +107,35 @@ guillaume@ubuntu:~/py/0x00$ ./8-concat_edges.py
 object-oriented programming with Python
 guillaume@ubuntu:~/py/0x00$ wc -l 8-concat_edges.py
 5 8-concat_edges.py
+guillaume@ubuntu:~/py/0x00$
+```
+
+### 9-easter_egg.py
+**9-easter_egg.py** - A python script that prints “The Zen of Python”, by TimPeters, followed by a new line
+
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x00$ ./9-easter_egg.py
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
 guillaume@ubuntu:~/py/0x00$
 ```
