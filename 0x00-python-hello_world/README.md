@@ -140,6 +140,25 @@ Namespaces are one honking great idea -- let's do more of those!
 guillaume@ubuntu:~/py/0x00$
 ```
 
+### 10-*
+This check-cycle file detects a cycle in a linked list and the other files creates, prints and frees the memory allocation needed for a linked list creation
+
+**USAGE**
+```
+carrie@ubuntu:~/0x00$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 10-main.c 10-check_cycle.c 10-linked_lists.c -o cycle
+carrie@ubuntu:~/0x00$$ ./cycle
+1024
+402
+98
+4
+3
+2
+1
+0
+Linked list has no cycle
+Linked list has a cycle
+carrie@ubuntu:~/0x00$
+```
 ### 100-write.py
 **100-write.py** - A python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line. to the standard error and exiting with status 1
 **USAGE**
