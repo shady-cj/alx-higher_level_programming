@@ -61,3 +61,11 @@ Last digit of 5169 is 9 and is greater than 5
 guillaume@ubuntu:~/0x01$
 ```
 
+### 2-print_alphabet.py
+**2-print_alphabet.py** - The program that prints the ASCII alphabet, in lowercase, not followed by a new line.
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x01$ ./2-print_alphabet.py
+abcdefghijklmnopqrstuvwxyzguillaume@ubuntu:~/0x01$
+```
