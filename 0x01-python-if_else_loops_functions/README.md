@@ -69,3 +69,13 @@ guillaume@ubuntu:~/0x01$
 guillaume@ubuntu:~/0x01$ ./2-print_alphabet.py
 abcdefghijklmnopqrstuvwxyzguillaume@ubuntu:~/0x01$
 ```
+
+### 3-print_alphabt.py
+**3-print_alphabt.py** - The program prints the ASCII alphabet, in lowercase, not followed by a new line. excluding 'q' and 'e'
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x01$ ./3-print_alphabt.py
+abcdfghijklmnoprstuvwxyzguillaume@ubuntu:~/0x01$
+```
+
