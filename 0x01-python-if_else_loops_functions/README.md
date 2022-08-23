@@ -153,3 +153,13 @@ BEST
 BEST SCHOOL 98 BATTERY STREET
 guillaume@ubuntu:~/0x01$
 ```
+
+### 9-print_last_digit.py
+**9-print_last_digit.py** - contains a function that prints the last digit of a number.
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x01$ ./9-main.py
+8044
+guillaume@ubuntu:~/0x01$
+```
