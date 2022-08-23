@@ -163,3 +163,15 @@ guillaume@ubuntu:~/0x01$ ./9-main.py
 8044
 guillaume@ubuntu:~/0x01$
 ```
+
+### 10-add.py
+**10-add.py** - a file that contains a function that adds two integers and returns the result
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x01$ ./10-main.py
+3
+98
+98
+guillaume@ubuntu:~/0x01$ 
+```
