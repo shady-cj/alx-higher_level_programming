@@ -229,3 +229,13 @@ carrie@ubuntu:0x01$ ./insert
 1024
 carrie@ubuntu:0x01$
 ```
+
+### 100-print_tebahpla.py 
+
+**100-print_tebahpla.py** - A program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x01$ ./100-print_tebahpla.py
+zYxWvUtSrQpOnMlKjIhGfEdCbAguillaume@ubuntu:~/0x01$
+```
