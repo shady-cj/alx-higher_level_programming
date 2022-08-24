@@ -239,3 +239,19 @@ carrie@ubuntu:0x01$
 guillaume@ubuntu:~/0x01$ ./100-print_tebahpla.py
 zYxWvUtSrQpOnMlKjIhGfEdCbAguillaume@ubuntu:~/0x01$
 ```
+
+### 101-remove_char_at.py
+
+**101-remove_char_at.py** - function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).
+
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x01$ ./101-main.py
+Bes School
+Chcago
+ is fun!
+School
+Python
+guillaume@ubuntu:~/0x01$
+```
