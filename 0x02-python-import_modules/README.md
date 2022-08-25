@@ -60,3 +60,15 @@ guillaume@ubuntu:~/0x02$ ./3-infinite_add.py 79 10 -40 -300 89
 -162
 guillaume@ubuntu:~/0x02$
 ```
+
+### 4-hidden_discovery.py
+**4-hidden_discovery.py** -  a program that prints all the names defined by the compiled module `hidden_4.pyc` (please download it locally). This only works on python 3.8
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x02$ ./4-hidden_discovery.py | sort
+my_secret_santa
+print_hidden
+print_school
+guillaume@ubuntu:~/0x02$
+```

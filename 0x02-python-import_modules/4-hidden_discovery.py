@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import hidden_4
-for fn in dir(hidden_4):
-    if (not fn.startswith("__")):
-        print(fn)
+if __name__ == "__main__":
+    import hidden_4
+    for fn in dir(hidden_4):
+        if (not fn.startswith("__")):
+            print(fn)
