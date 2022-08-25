@@ -75,3 +75,14 @@ guillaume@ubuntu:~/0x02$
 
 ### 5-variable_load.py
 **5-variable_load.py** -  a program that imports the variable `a` from the file `variable_load_5.py` and prints its value.
+
+
+### 101-easy_print.py
+**101-easy_print.py** - a program that prints `#pythoniscool`, followed by a new line, in the standard output with the use of print or eval or open or import sys
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x02$ ./101-easy_print.py
+#pythoniscool
+guillaume@ubuntu:~/0x02$
+```
