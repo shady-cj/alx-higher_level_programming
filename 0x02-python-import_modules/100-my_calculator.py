@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
-import sys
-
-
-def calculate(a, b, op):
+if __name__ == "__main__":
+    from calculator_1 import add, sub, mul, div
+    import sys
+    if len(sys.argv) == 1:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    op = sys.argv[2]
     result = None
     message = ""
     match op:
@@ -22,9 +26,3 @@ def calculate(a, b, op):
         sys.exit(1)
     print("{} {} {} = {}".format(a, op, b, result))
 
-
-if __name__ == "__main__":
-    if len(sys.argv) == 1:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
-    calculate(int(sys.argv[1]), int(sys.argv[3]), sys.argv[2])
