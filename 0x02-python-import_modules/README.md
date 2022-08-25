@@ -72,3 +72,6 @@ print_hidden
 print_school
 guillaume@ubuntu:~/0x02$
 ```
+
+### 5-variable_load.py
+**5-variable_load.py** -  a program that imports the variable `a` from the file `variable_load_5.py` and prints its value.
