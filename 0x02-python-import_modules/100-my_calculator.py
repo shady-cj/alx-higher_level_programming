@@ -24,4 +24,4 @@ if __name__ == "__main__":
     if result is None:
         print("{}".format(message))
         sys.exit(1)
-    print("{} {} {} = {}".format(a, op, b, result))
+    print("{:d} {} {:d} = {:d}".format(a, op, b, result))
