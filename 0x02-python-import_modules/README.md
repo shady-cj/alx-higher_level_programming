@@ -25,3 +25,24 @@ guillaume@ubuntu:~/0x02$ ./1-calculation.py
 10 / 5 = 2
 guillaume@ubuntu:~/0x02$
 ```
+
+### 2-args.py
+**2-args.py** -  A program that prints the number of and the list of its arguments.
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x02$ ./2-args.py
+0 arguments.
+guillaume@ubuntu:~/0x02$ ./2-args.py Hello
+1 argument:
+1: Hello
+guillaume@ubuntu:~/0x02$ ./2-args.py Hello Welcome To The Best School
+6 arguments:
+1: Hello
+2: Welcome
+3: To
+4: The
+5: Best
+6: School
+guillaume@ubuntu:~/0x02$
+```
