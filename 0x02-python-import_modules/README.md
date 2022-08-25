@@ -86,3 +86,21 @@ guillaume@ubuntu:~/0x02$ ./101-easy_print.py
 #pythoniscool
 guillaume@ubuntu:~/0x02$
 ```
+
+### 103-fast_alphabet.py
+**103-fast_alphabet.py** -  a program that prints the alphabet in uppercase, followed by a new line.
+without using:
+* any loops
+* any conditional statements
+* str.join()
+* any string literal
+* any system calls
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x02$ ./103-fast_alphabet.py
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+guillaume@ubuntu:~/0x02$ wc -l 103-fast_alphabet.py
+3 103-fast_alphabet.py
+guillaume@ubuntu:~/0x02$
+```
