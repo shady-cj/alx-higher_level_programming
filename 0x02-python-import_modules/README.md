@@ -77,6 +77,24 @@ guillaume@ubuntu:~/0x02$
 **5-variable_load.py** -  a program that imports the variable `a` from the file `variable_load_5.py` and prints its value.
 
 
+### 100-my_calculator.py
+**100-my_calculator.py** - a program that imports all functions from the file calculator_1.py and handles basic operations. from the command line.
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x02$ ./100-my_calculator.py ; echo $?
+Usage: ./100-my_calculator.py <a> <operator> <b>
+1
+guillaume@ubuntu:~/0x02$ ./100-my_calculator.py 3 + 5 ; echo $?
+3 + 5 = 8
+0
+guillaume@ubuntu:~/0x02$ ./100-my_calculator.py 3 H 5 ; echo $?
+Unknown operator. Available operators: +, -, * and /
+1
+guillaume@ubuntu:~/0x02$
+```
+
+
 ### 101-easy_print.py
 **101-easy_print.py** - a program that prints `#pythoniscool`, followed by a new line, in the standard output with the use of print or eval or open or import sys
 
@@ -102,22 +120,5 @@ guillaume@ubuntu:~/0x02$ ./103-fast_alphabet.py
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 guillaume@ubuntu:~/0x02$ wc -l 103-fast_alphabet.py
 3 103-fast_alphabet.py
-guillaume@ubuntu:~/0x02$
-```
-
-### 100-my_calculator.py
-**100-my_calculator.py** - a program that imports all functions from the file calculator_1.py and handles basic operations. from the command line.
-
-**USAGE**
-```
-guillaume@ubuntu:~/0x02$ ./100-my_calculator.py ; echo $?
-Usage: ./100-my_calculator.py <a> <operator> <b>
-1
-guillaume@ubuntu:~/0x02$ ./100-my_calculator.py 3 + 5 ; echo $?
-3 + 5 = 8
-0
-guillaume@ubuntu:~/0x02$ ./100-my_calculator.py 3 H 5 ; echo $?
-Unknown operator. Available operators: +, -, * and /
-1
 guillaume@ubuntu:~/0x02$
 ```
