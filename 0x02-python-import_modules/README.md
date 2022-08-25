@@ -12,3 +12,16 @@ This section visits the concept of python modules import and packages
 guillaume@ubuntu:~/0x02$ ./0-add.py
 1 + 2 = 3
 ```
+
+### 1-calculation.py
+**1-calculation.py** -  A program that imports functions from the file calculator_1.py, does some Maths, and prints the result.
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x02$ ./1-calculation.py
+10 + 5 = 15
+10 - 5 = 5
+10 * 5 = 50
+10 / 5 = 2
+guillaume@ubuntu:~/0x02$
+```
