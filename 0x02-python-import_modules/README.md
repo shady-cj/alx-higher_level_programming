@@ -46,3 +46,17 @@ guillaume@ubuntu:~/0x02$ ./2-args.py Hello Welcome To The Best School
 6: School
 guillaume@ubuntu:~/0x02$
 ```
+
+### 3-infinite_add.py
+**3-infinite_add.py** - A program that prints the result of the addition of all arguments
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x02$ ./3-infinite_add.py
+0
+guillaume@ubuntu:~/0x02$ ./3-infinite_add.py 79 10
+89
+guillaume@ubuntu:~/0x02$ ./3-infinite_add.py 79 10 -40 -300 89
+-162
+guillaume@ubuntu:~/0x02$
+```
