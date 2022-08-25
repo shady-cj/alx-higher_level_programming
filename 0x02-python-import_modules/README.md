@@ -104,3 +104,20 @@ guillaume@ubuntu:~/0x02$ wc -l 103-fast_alphabet.py
 3 103-fast_alphabet.py
 guillaume@ubuntu:~/0x02$
 ```
+
+### 100-my_calculator.py
+**100-my_calculator.py** - a program that imports all functions from the file calculator_1.py and handles basic operations. from the command line.
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x02$ ./100-my_calculator.py ; echo $?
+Usage: ./100-my_calculator.py <a> <operator> <b>
+1
+guillaume@ubuntu:~/0x02$ ./100-my_calculator.py 3 + 5 ; echo $?
+3 + 5 = 8
+0
+guillaume@ubuntu:~/0x02$ ./100-my_calculator.py 3 H 5 ; echo $?
+Unknown operator. Available operators: +, -, * and /
+1
+guillaume@ubuntu:~/0x02$
+```
