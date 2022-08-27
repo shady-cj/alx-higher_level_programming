@@ -78,3 +78,19 @@ hiago
  is fun!
 guillaume@ubuntu:~/0x03$ 
 ```
+
+### 6-print_matrix_integer.py
+
+**6-print_matrix_integer.py** -  a function that prints a matrix of integers.
+
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x03$ ./6-main.py | cat -e
+1 2 3$
+4 5 6$
+7 8 9$
+--$
+$
+guillaume@ubuntu:~/0x03$ 
+```
