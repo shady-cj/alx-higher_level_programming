@@ -19,3 +19,11 @@ guillaume@ubuntu:~/0x03$ ./0-main.py
 guillaume@ubuntu:~/0x03$
 ```
 
+### 1-element_at.py
+**1-element_at.py** - a function that retrieves an element from a list like in C.
+
+```
+guillaume@ubuntu:~/0x03$ ./1-main.py
+Element at index 3 is 4
+guillaume@ubuntu:~/0x03$
+```
