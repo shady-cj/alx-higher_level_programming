@@ -94,3 +94,16 @@ guillaume@ubuntu:~/0x03$ ./6-main.py | cat -e
 $
 guillaume@ubuntu:~/0x03$ 
 ```
+
+### 7-add_tuple.py
+
+**7-add_tuple.py** - function that adds 2 tuples.
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x03$ ./7-main.py
+(89, 100)
+(2, 89)
+(1, 89)
+guillaume@ubuntu:~/0x03$
+```
