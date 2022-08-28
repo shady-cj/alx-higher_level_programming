@@ -107,3 +107,15 @@ guillaume@ubuntu:~/0x03$ ./7-main.py
 (1, 89)
 guillaume@ubuntu:~/0x03$
 ```
+
+### 8-multiple_returns.py
+
+**8-multiple_returns.py** - A function that returns a tuple with the length of a string and its first character.
+
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x03$ ./8-main.py
+Length: 22 - First character: A
+guillaume@ubuntu:~/0x03$
+```
