@@ -162,3 +162,13 @@ guillaume@ubuntu:~/0x03$ ./11-main.py
 [1, 2, 3, 5]
 guillaume@ubuntu:~/0x03$
 ```
+
+### 12-switch.py
+
+**12-switch.py** - A simple program that switches the values of 2 variables on a single line
+
+**USAGE**
+```
+guillaume@ubuntu:~/py/0x03$ ./12-switch.py
+a=10 - b=89
+```
