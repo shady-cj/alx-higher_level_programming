@@ -131,3 +131,20 @@ guillaume@ubuntu:~/0x03$ ./9-main.py
 Max: 90
 guillaume@ubuntu:~/0x03$
 ```
+
+### 10-divisible_by_2.py
+
+**10-divisible_by_2.py** - A function that Returns a new list with True or False, depending on whether the integer at the same position in the original list is a multiple of 2
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x03$ ./10-main.py
+0 is divisible by 2
+1 is not divisible by 2
+2 is divisible by 2
+3 is not divisible by 2
+4 is divisible by 2
+5 is not divisible by 2
+6 is divisible by 2
+guillaume@ubuntu:~/0x03$
+```
