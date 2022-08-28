@@ -119,3 +119,15 @@ guillaume@ubuntu:~/0x03$ ./8-main.py
 Length: 22 - First character: A
 guillaume@ubuntu:~/0x03$
 ```
+
+### 9-max_integer.py
+
+**9-max_integer.py** - A function that finds the biggest integer of a list.
+
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x03$ ./9-main.py
+Max: 90
+guillaume@ubuntu:~/0x03$
+```
