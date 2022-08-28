@@ -148,3 +148,17 @@ guillaume@ubuntu:~/0x03$ ./10-main.py
 6 is divisible by 2
 guillaume@ubuntu:~/0x03$
 ```
+
+
+### 11-delete_at.py
+
+**11-delete_at.py** - A function that deletes the item at a specific position in a list.
+
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x03$ ./11-main.py
+[1, 2, 3, 5]
+[1, 2, 3, 5]
+guillaume@ubuntu:~/0x03$
+```
