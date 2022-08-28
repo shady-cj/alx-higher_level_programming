@@ -11,6 +11,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
         y += tuple_a[1]
     if (len(tuple_b) > 1):
         y += tuple_b[1]
-    
     z = x, y
     return z
