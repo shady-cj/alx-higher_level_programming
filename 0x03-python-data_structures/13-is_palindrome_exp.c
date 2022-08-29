@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
 
@@ -17,6 +18,7 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL)
 		return (1);
 	duplicate_linked_list(&new_head, *head);
+	reverse_duplicate(&new_head);
 	ptr_1 = *head;
 	ptr_2 = new_head;
 
@@ -35,7 +37,7 @@ int is_palindrome(listint_t **head)
 }
 
 /**
- * duplicate_linked_list - Duplicates the linked list in reverse.
+ * duplicate_linked_list - Duplicates the linked list..
  * @new_head: The address to the new head node
  * @head: The main head node
  * Return: void
@@ -48,11 +50,12 @@ void duplicate_linked_list(listint_t **new_head, listint_t *head)
 	listint_t *current = NULL;
 
 	current = head;
-	ptr = malloc(sizeof(listint_t));
-	if (ptr == NULL)
+	*new_head = malloc(sizeof(listint_t));
+	if (*new_head == NULL)
 		return;
-	ptr->n = current->n;
-	ptr->next = NULL;
+	(*new_head)->n = current->n;
+	(*new_head)->next = NULL;
+	ptr = *new_head;
 	current = current->next;
 	while (current != NULL)
 	{
@@ -60,9 +63,32 @@ void duplicate_linked_list(listint_t **new_head, listint_t *head)
 		if (new == NULL)
 			return;
 		new->n = current->n;
-		new->next = ptr;
-		ptr = new;
+		new->next = NULL;
+		ptr->next = new;
+		ptr = ptr->next;
 		current = current->next;
 	}
-	*new_head = ptr;
+}
+
+/**
+ * reverse_duplicate - This reverses the initially duplicated linked list.
+ * @new_head: Address to the new duplicated head node to be reversed
+ * Return: void
+ */
+
+void reverse_duplicate(listint_t **new_head)
+{
+	listint_t *current = NULL;
+	listint_t *prev = NULL;
+	listint_t *next = NULL;
+
+	current = *new_head;
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	*new_head = prev;
 }
