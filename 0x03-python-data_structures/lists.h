@@ -17,10 +17,7 @@ typedef struct listint_s
 
 size_t print_listint(const listint_t *h);
 void duplicate_linked_list(listint_t **new_head, listint_t *head);
-void reverse_duplicate(listint_t **new_head,
-                listint_t *current, listint_t *prev,
-                listint_t *next
-                );
+void reverse_duplicate(listint_t **new_head);
 listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 
