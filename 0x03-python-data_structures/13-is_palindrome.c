@@ -31,8 +31,7 @@ int is_palindrome(listint_t **head)
 		ptr_1 = ptr_1->next;
 		ptr_2 = ptr_2->next;
 	}
-	if (new_head != NULL)
-		free_listint(new_head);
+	free_listint(new_head);
 	if (ptr_1 == NULL && ptr_2 == NULL)
 		return (1);
 	else
