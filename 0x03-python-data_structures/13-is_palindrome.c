@@ -83,10 +83,6 @@ void reverse_duplicate(listint_t **new_head)
 	listint_t *next = NULL;
 
 	current = *new_head;
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 7caaa32 (feat+docs: A C program that checks if a linked list is palindromic)
 	while (current != NULL)
 	{
 		next = current->next;
