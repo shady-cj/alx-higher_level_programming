@@ -18,7 +18,9 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL)
 		return (1);
 	duplicate_linked_list(&new_head, *head);
-	reverse_duplicate(&new_head);
+	reverse_duplicate(&new_head,
+                new_head, NULL, NULL
+                );
 	ptr_1 = *head;
 	ptr_2 = new_head;
 
@@ -77,19 +79,21 @@ void duplicate_linked_list(listint_t **new_head, listint_t *head)
  * Return: void
  */
 
-void reverse_duplicate(listint_t **new_head)
+void reverse_duplicate(listint_t **new_head,
+		listint_t *current, listint_t *prev,
+		listint_t *next
+		)
 {
-	listint_t *current = NULL;
-	listint_t *prev = NULL;
-	listint_t *next = NULL;
-
-	current = *new_head;
-	while (current != NULL)
+	if (current == NULL)
 	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
+		*new_head = prev;
+		return;
 	}
-	*new_head = prev;
+	next = current->next;
+	current->next = prev;
+	prev = current;
+	current = next;
+	reverse_duplicate(new_head,
+                current, prev, next
+                );
 }
