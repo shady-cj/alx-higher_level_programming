@@ -172,28 +172,3 @@ guillaume@ubuntu:~/0x03$
 guillaume@ubuntu:~/py/0x03$ ./12-switch.py
 a=10 - b=89
 ```
-
-
-### 13-is_palindrome.c
-
-**13-is_palindrome.c** - a function in C that checks if a singly linked list is a palindrome.
-
-
-**USAGE**
-
-```
-carrie@ubuntu:0x03$ gcc -Wall -Werror -Wextra -pedantic 13-main.c linked_lists.c 13-is_palindrome.c -o palindrome
-carrie@ubuntu:0x03$ ./palindrome
-1
-17
-972
-50
-98
-98
-50
-972
-17
-1
-Linked list is a palindrome
-carrie@ubuntu:0x03$
-```
