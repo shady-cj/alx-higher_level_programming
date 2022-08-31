@@ -15,7 +15,7 @@ void print_python_list(PyObject *p)
 	printf("[*] Python list info\n");
 	size = PyList_Size(p);
 	printf("[*] Size of the Python List = %lu\n", size);
-	printf("[*] Allocated = %d\n", (PyListObject *)p->allocated);
+	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 
 	for (index = 0; index < size; index++)
 	{
@@ -23,11 +23,11 @@ void print_python_list(PyObject *p)
 		if (PyBytes_Check(entry))
 		{
 			printf("Element %lu: bytes\n", index);
-			print_python_bytes(p);
+			print_python_bytes(entry);
 		}
 		else
 		{
-			printf("Element %lu: %s", index, p->ob_type);
+			printf("Element %lu: %s\n", index, (entry->ob_type)->tp_name);
 		}
 	}
 }
@@ -45,8 +45,13 @@ void print_python_bytes(PyObject *p)
 	char *b_str;
 
 	printf("[.] bytes object info\n");
+	if (!PyBytes_Check(p))
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
 	size = PyBytes_Size(p);
 	printf("  size: %lu\n", size);
 	b_str = PyBytes_AsString(p);
-	printf("trying string: %s\n", b_str);
+	printf("  trying string: %s\n", b_str);
 }
