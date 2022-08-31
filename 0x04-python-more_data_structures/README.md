@@ -27,3 +27,15 @@ guillaume@ubuntu:~/0x04$ ./1-main.py
 [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
 guillaume@ubuntu:~/0x04$
 ```
+
+### 2-uniq_add.py
+
+**2-uniq_add.py** - A function that adds all unique integers in a list (only once for each integer).
+
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x04$ ./2-main.py
+Result: 15
+guillaume@ubuntu:~/0x04$
+```
