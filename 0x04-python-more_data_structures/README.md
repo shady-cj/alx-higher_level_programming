@@ -39,3 +39,16 @@ guillaume@ubuntu:~/0x04$ ./2-main.py
 Result: 15
 guillaume@ubuntu:~/0x04$
 ```
+
+
+### 3-common_elements.py
+
+**3-common_elements.py** - A function that returns a set of common elements in two sets.
+
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x04$ ./3-main.py
+['C']
+guillaume@ubuntu:~/0x04$
+```
