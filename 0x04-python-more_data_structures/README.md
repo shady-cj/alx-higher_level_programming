@@ -260,3 +260,31 @@ Mike: 28
 Molly: 32
 guillaume@ubuntu:~/0x04$
 ```
+
+
+### 10-best_score.py
+
+
+**10-best_score.py** - A function that returns a key with the biggest integer value from a dictionary
+
+
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x04$ cat 10-main.py
+#!/usr/bin/python3
+best_score = __import__('10-best_score').best_score
+
+a_dictionary = {'John': 12, 'Bob': 14, 'Mike': 14, 'Molly': 16, 'Adam': 10}
+best_key = best_score(a_dictionary)
+print("Best score: {}".format(best_key))
+
+best_key = best_score(None)
+print("Best score: {}".format(best_key))
+
+guillaume@ubuntu:~/0x04$ ./10-main.py
+Best score: Molly
+Best score: None
+guillaume@ubuntu:~/0x04$
+```
+
