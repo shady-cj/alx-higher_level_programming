@@ -27,7 +27,7 @@ void print_python_list(PyObject *p)
 }
 
 /**
- * print_python_bytees - This function takes in a python byte and prints
+ * print_python_bytes - This function takes in a python byte and prints
  * information about the byte.
  * @p: The python byte of type PyObject
  * Return: void
