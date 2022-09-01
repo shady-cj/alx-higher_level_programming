@@ -3,7 +3,7 @@
 void print_python_bytes(PyObject *p);
 void print_python_list(PyObject *p);
 /**
- * iprint_python_list - This function takes in a Python list and
+ * print_python_list - This function takes in a Python list and
  * prints information about each entry in the list
  * @p: The python list of type PyObject
  * Return: void
@@ -50,15 +50,10 @@ void print_python_bytes(PyObject *p)
 	b_str = ((PyBytesObject *)(p))->ob_sval;
 	printf("  trying string: %s\n", b_str);
 	if (size < 10)
-	{
 		max_byte = size + 1;
-		printf("  First %ld bytes: ", max_byte);
-	}
 	else
-	{
 		max_byte = 10;
-		printf("  First 10 bytes: ");
-	}
+	printf("  first %ld bytes: ", max_byte);
 	for (index = 0; index < max_byte; index++)
 	{
 		if (index + 1 == max_byte)
