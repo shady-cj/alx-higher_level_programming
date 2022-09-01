@@ -20,15 +20,9 @@ void print_python_list(PyObject *p)
 	for (index = 0; index < size; index++)
 	{
 		entry = ((PyListObject *)p)->ob_item[index];
+		printf("Element %d: %s\n", index, (entry->ob_type)->tp_name);
 		if (PyBytes_Check(entry))
-		{
-			printf("Element %d: bytes\n", index);
 			print_python_bytes(entry);
-		}
-		else
-		{
-			printf("Element %d: %s\n", index, (entry->ob_type)->tp_name);
-		}
 	}
 }
 
