@@ -1,8 +1,9 @@
 #include <Python.h>
 #include <stdio.h>
 void print_python_bytes(PyObject *p);
+void print_python_list(PyObject *p);
 /**
- * print_python_list - This function takes in a Python list and
+ * iprint_python_list - This function takes in a Python list and
  * prints information about each entry in the list
  * @p: The python list of type PyObject
  * Return: void
