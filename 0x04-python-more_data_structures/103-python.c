@@ -57,18 +57,18 @@ void print_python_bytes(PyObject *p)
 	if ((size + 1) < 10)
 	{
 		max_byte = size + 1;
-		print("  First %lu bytes: ", max_byte);
+		printf("  First %lu bytes: ", max_byte);
 	}
 	else
 	{
 		max_byte = 10;
-		print("  First 10 bytes: ");
+		printf("  First 10 bytes: ");
 	}
 	for (index = 0; index < max_byte; index++)
 	{
 		if (index + 1 == max_byte)
-			printf("%x\n", b_str[index]);
+			printf("%02x\n", b_str[index]);
 		else
-			printf("%x ", b_str[index]);
+			printf("%02x ", b_str[index]);
 	}
 }
