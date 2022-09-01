@@ -67,8 +67,8 @@ void print_python_bytes(PyObject *p)
 	for (index = 0; index < max_byte; index++)
 	{
 		if (index + 1 == max_byte)
-			printf("%.2x\n", b_str[index]);
+			printf("%02hhx\n", b_str[index]);
 		else
-			printf("%.2x ", b_str[index]);
+			printf("%02hhx ", b_str[index]);
 	}
 }
