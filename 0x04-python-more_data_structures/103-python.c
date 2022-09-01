@@ -19,7 +19,7 @@ void print_python_list(PyObject *p)
 
 	for (index = 0; index < size; index++)
 	{
-		entry = PyList_GET_ITEM(p, index);
+		entry = ((PyListObject *)p)->ob_item[index];
 		if (PyBytes_Check(entry))
 		{
 			printf("Element %lu: bytes\n", index);
