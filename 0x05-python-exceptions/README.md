@@ -183,3 +183,33 @@ guillaume@ubuntu:~/0x05$ ./100-main.py 2> /dev/null
 School is not an integer
 guillaume@ubuntu:~/0x05$
 ```
+
+
+
+### 8. Safe function
+
+- Task: Write a function that executes a function safely.
+- Files: 101-safe_function.py, 101-main.py
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x05$ ./101-main.py
+result of my_div: 5.0
+Exception: division by zero
+result of my_div: None
+1
+2
+3
+4
+Exception: list index out of range
+result of print_list: None
+guillaume@ubuntu:~/0x05$ ./101-main.py 2> /dev/null
+result of my_div: 5.0
+result of my_div: None
+1
+2
+3
+4
+result of print_list: None
+guillaume@ubuntu:~/0x05$
+```
