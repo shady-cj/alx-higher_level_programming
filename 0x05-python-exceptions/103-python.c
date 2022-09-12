@@ -65,7 +65,7 @@ void print_python_bytes(PyObject *p)
 	else
 		max_byte = 10;
 	printf("  first %ld bytes: ", max_byte);
-	fflush(stdout)
+	fflush(stdout);
 	for (index = 0; index < max_byte; index++)
 	{
 		if (index + 1 == max_byte)
@@ -90,6 +90,6 @@ void print_python_float(PyObject *p)
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	printf("  value: %f\n", ((PyFloatObject *)(op))->ob_fval);
+	printf("  value: %.17g\n", ((PyFloatObject *)(p))->ob_fval);
 	fflush(stdout);
 }
