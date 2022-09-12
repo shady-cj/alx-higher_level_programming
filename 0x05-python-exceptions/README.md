@@ -59,3 +59,19 @@ nb_print: 5
 IndexError: list index out of range
 guillaume@ubuntu:~/0x05$
 ```
+
+### 3. Integers division with debug
+
+- Task: Write a function that divides 2 integers and prints the result.
+- Files: 3-safe_print_division.py, 3-main.py
+
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x05$ ./3-main.py
+Inside result: 6.0
+12 / 2 = 6.0
+Inside result: None
+12 / 0 = None
+guillaume@ubuntu:~/0x05$
+```
