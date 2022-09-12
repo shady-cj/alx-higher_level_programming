@@ -21,3 +21,18 @@ nb_print: 5
 nb_print: 5
 guillaume@ubuntu:~/0x05$
 ```
+
+
+### 1. Safe printing of an integers list
+
+- Task: Write a function that prints an integer with `"{:d}".format().`
+- Files: 1-safe_print_integer.py, 1-main.py
+
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x05$ ./1-main.py
+89
+-89
+School is not an integer
+```
