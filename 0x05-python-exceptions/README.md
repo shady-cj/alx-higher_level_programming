@@ -99,3 +99,25 @@ result = list_division(my_l_1, my_l_2, max(len(my_l_1), len(my_l_2)))
 print(result)
 
 ```
+
+
+### 5. Raise exception
+
+- Task: Write a function that raises a type exception.
+- Files: 5-raise_exception.py, 5-main.py
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x05$ cat 5-main.py
+#!/usr/bin/python3
+raise_exception = __import__('5-raise_exception').raise_exception
+
+try:
+    raise_exception()
+except TypeError as te:
+    print("Exception raised")
+
+guillaume@ubuntu:~/0x05$ ./5-main.py
+Exception raised
+guillaume@ubuntu:~/0x05$
+```
