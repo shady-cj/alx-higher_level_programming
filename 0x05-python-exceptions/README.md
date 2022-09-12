@@ -143,3 +143,43 @@ guillaume@ubuntu:~/0x05$ ./6-main.py
 C is fun
 guillaume@ubuntu:~/0x05$
 ```
+
+
+### 7. Safe integer print with error message
+
+- Task: Write a function that prints an integer.
+- Files: 100-safe_print_integer_err.py, 100-main.py
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x05$ cat 100-main.py
+#!/usr/bin/python3
+safe_print_integer_err = \
+    __import__('100-safe_print_integer_err').safe_print_integer_err
+
+value = 89
+has_been_print = safe_print_integer_err(value)
+if not has_been_print:
+    print("{} is not an integer".format(value))
+
+value = -89
+has_been_print = safe_print_integer_err(value)
+if not has_been_print:
+    print("{} is not an integer".format(value))
+
+value = "School"
+has_been_print = safe_print_integer_err(value)
+if not has_been_print:
+    print("{} is not an integer".format(value))
+
+guillaume@ubuntu:~/0x05$ ./100-main.py
+89
+-89
+Exception: Unknown format code 'd' for object of type 'str'
+School is not an integer
+guillaume@ubuntu:~/0x05$ ./100-main.py 2> /dev/null
+89
+-89
+School is not an integer
+guillaume@ubuntu:~/0x05$
+```
