@@ -121,3 +121,25 @@ guillaume@ubuntu:~/0x05$ ./5-main.py
 Exception raised
 guillaume@ubuntu:~/0x05$
 ```
+
+
+### 6. Raise a message
+
+- Task: Write a function that raises a name exception with a message.
+- Files: 6-main.py, 6-raise_exception_msg.py
+
+**USAGE**
+```
+guillaume@ubuntu:~/0x05$ cat 6-main.py
+#!/usr/bin/python3
+raise_exception_msg = __import__('6-raise_exception_msg').raise_exception_msg
+
+try:
+    raise_exception_msg("C is fun")
+except NameError as ne:
+    print(ne)
+
+guillaume@ubuntu:~/0x05$ ./6-main.py
+C is fun
+guillaume@ubuntu:~/0x05$
+```
