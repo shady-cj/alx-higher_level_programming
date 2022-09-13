@@ -151,3 +151,29 @@ Area: 9
 Area: 25
 guillaume@ubuntu:~/0x06$
 ```
+
+
+### 4. Access and update private attribute
+
+- Task: Write a class Square that defines a square by: (based on 3-square.py)
+- Files: 4-square.py, 4-main.py
+
+
+**USAGE**
+
+```
+#!/usr/bin/python3
+Square = __import__('4-square').Square
+
+my_square = Square(89)
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+my_square.size = 3
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+
+try:
+    my_square.size = "5 feet"
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+except Exception as e:
+    print(e)
+```
