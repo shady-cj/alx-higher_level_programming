@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
 
-""" 
-A module that implements the a Linked List using 
+"""
+A module that implements the a Linked List using
 
 python classes
-
 """
 
 
@@ -38,20 +37,20 @@ class Node:
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
-    
+
     data = property(get_data, set_data)
     next_node = property(get_next_node, set_next_node)
 
 
 class SinglyLinkedList:
-    """ 
+    """
     This class defines a singly linked list
     using the node class to create the list
     """
     def __init__(self):
         """Initializes the class with the private attr. head node as None"""
         self.__head = None
-    
+
     def sorted_insert(self, value):
         """ Inserts a new node into the Singly Linked list
         and also sorting the entries.. thus making sure the data in
@@ -74,7 +73,7 @@ class SinglyLinkedList:
             else:
                 initial_node.next_node = new_node
                 new_node.next_node = ptr
-    
+
     def __str__(self):
         """ A string representation of the whole data in the linked list """
         ptr = self.__head
@@ -83,4 +82,3 @@ class SinglyLinkedList:
             str_rep += str(ptr.data) + "\n"
             ptr = ptr.next_node
         return str_rep[:-1]
-        
