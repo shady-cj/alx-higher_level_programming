@@ -8,10 +8,12 @@ class Square:
     def __init__(self, size=0):
         """ Instantiate class and validate the size argument """
         self.size = size
+
     @property
     def size(self):
         """ The getter method for the size attribute """
         return self.__size
+
     @size.setter
     def size(self, size):
         """ The setter method to set the size attribute """
