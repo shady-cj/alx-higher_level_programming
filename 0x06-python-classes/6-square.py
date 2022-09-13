@@ -40,9 +40,9 @@ class Square:
 
     def my_print(self):
         """ prints in stdout the square with the character # """
-        for _ in range(self.position[1]):
-            print("")
         if self.size != 0:
+            for _ in range(self.position[1]):
+                print("")
             for _ in range(self.size):
                 for _ in range(self.position[0]):
                     print(" ", end="")
