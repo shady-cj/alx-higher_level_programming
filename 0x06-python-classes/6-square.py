@@ -5,7 +5,7 @@
 
 class Square:
     """ A square class that takes a size as a argument """
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """ Instantiate class and validate the size and position argument """
         self.size = size
         self.position = position
@@ -39,7 +39,7 @@ class Square:
 
     def my_print(self):
         """ prints in stdout the square with the character # """
-        if self.position[1] > 0:
+        for _ in range(self.position[1]):
             print("")
         if self.size != 0:
             for _ in range(self.size):
