@@ -63,6 +63,10 @@ guillaume@ubuntu:~/0x06$
 ### 2. Size validation
 
 - Task: Write a class Square that defines a square by: (based on 1-square.py)
+* Private instance attribute: size
+* Instantiation with optional size: def __init__(self, size=0):
+size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
+if size is less than 0, raise a ValueError exception with the message size must be >= 
 - Files: 2-square.py, 2-main.py
 
 **USAGE**
@@ -119,6 +123,14 @@ guillaume@ubuntu:~/0x06$
 ### 3. Area of a square
 
 - Task: Write a class Square that defines a square by: (based on 2-square.py)
+* Private instance attribute: size:
+property def size(self): to retrieve it
+property setter def size(self, value): to set it:
+size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
+if size is less than 0, raise a ValueError exception with the message size must be >= 0
+* Instantiation with optional size: def __init__(self, size=0):
+
+* Public instance method: def area(self): that returns the current square area
 - Files: 3-square.py, 3-main.py
 
 **USAGE**
@@ -156,6 +168,15 @@ guillaume@ubuntu:~/0x06$
 ### 4. Access and update private attribute
 
 - Task: Write a class Square that defines a square by: (based on 3-square.py)
+
+* Private instance attribute: size:
+property def size(self): to retrieve it
+property setter def size(self, value): to set it:
+size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
+if size is less than 0, raise a ValueError exception with the message size must be >= 0
+* Instantiation with optional size: def __init__(self, size=0):
+* Public instance method: def area(self): that returns the current square area
+
 - Files: 4-square.py, 4-main.py
 
 
@@ -176,4 +197,66 @@ try:
     print("Area: {} for size: {}".format(my_square.area(), my_square.size))
 except Exception as e:
     print(e)
+```
+
+### 5. Printing a square
+
+- Task: Write a class Square that defines a square by: (based on 4-square.py)
+
+* Private instance attribute: size:
+property def size(self): to retrieve it
+property setter def size(self, value): to set it:
+size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
+if size is less than 0, raise a ValueError exception with the message size must be >= 0
+* Instantiation with optional size: def __init__(self, size=0):
+* Public instance method: def area(self): that returns the current square area
+* Public instance method: def my_print(self): that prints in stdout the square with the character #:
+if size is equal to 0, print an empty line
+
+
+- Files: 5-square.py, 5-main.py
+
+
+**USAGE**
+
+
+```
+guillaume@ubuntu:~/0x06$ cat 5-main.py
+#!/usr/bin/python3
+Square = __import__('5-square').Square
+
+my_square = Square(3)
+my_square.my_print()
+
+print("--")
+
+my_square.size = 10
+my_square.my_print()
+
+print("--")
+
+my_square.size = 0
+my_square.my_print()
+
+print("--")
+
+guillaume@ubuntu:~/0x06$ ./5-main.py
+###
+###
+###
+--
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+--
+
+--
+guillaume@ubuntu:~/0x06$
 ```
