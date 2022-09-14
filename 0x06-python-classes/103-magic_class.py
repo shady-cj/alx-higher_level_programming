@@ -9,7 +9,7 @@ import math
 class MagicClass:
 
     """ The magic class that was disassembled """
-    def __init__(self, radius = 0):
+    def __init__(self, radius=0):
         """ Intializing the MagicClass and validating the arg passed """
         self.__radius = 0
 
