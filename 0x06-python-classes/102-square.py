@@ -35,7 +35,7 @@ class Square:
             return True
         else:
             return False
-    
+
     def __le__(self, other):
         """ Overloading the less than or equal to operator """
         if self.area() <= other.area():
@@ -49,7 +49,7 @@ class Square:
             return True
         else:
             return False
-    
+
     def __ne__(self, other):
         """ Overloading the not equals to operator """
         if self.area() != other.area():
@@ -63,7 +63,7 @@ class Square:
             return True
         else:
             return False
-    
+
     def __ge__(self, other):
         """ Overloading the greater than or equals to operator """
         if self.area() >= other.area():
