@@ -416,3 +416,40 @@ ____#####$
 ____#####$
 guillaume@ubuntu:~/0x06$
 ```
+
+
+### 9. Compare 2 squares
+
+- Task: based on `4-square.py` extend the class `Square` to make sure the Square instance can answer to comparators: ==, !=, >, >=, < and <= based on the square area
+
+- Files: 102-square.py, 102-main.py
+
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x06$ cat 102-main.py
+#!/usr/bin/python3
+Square = __import__('102-square').Square
+
+s_5 = Square(5)
+s_6 = Square(6)
+
+if s_5 < s_6:
+    print("Square 5 < Square 6")
+if s_5 <= s_6:
+    print("Square 5 <= Square 6")
+if s_5 == s_6:
+    print("Square 5 == Square 6")
+if s_5 != s_6:
+    print("Square 5 != Square 6")
+if s_5 > s_6:
+    print("Square 5 > Square 6")
+if s_5 >= s_6:
+    print("Square 5 >= Square 6")
+
+guillaume@ubuntu:~/0x06$ ./102-main.py
+Square 5 < Square 6
+Square 5 <= Square 6
+Square 5 != Square 6
+guillaume@ubuntu:~/0x06$
+```
