@@ -56,8 +56,8 @@ guillaume@ubuntu:~/0x07$
 ```
 
 
-###
- 
+### 1. Divide a matrix
+
 - Task: Write a function that divides all elements of a matrix.
     -> Prototype: def matrix_divided(matrix, div):
     -> matrix must be a list of lists of integers or floats,                                     otherwise raise a TypeError exception with the message
@@ -87,6 +87,42 @@ guillaume@ubuntu:~/0x07$ ./2-main.py
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 [[1, 2, 3], [4, 5, 6]]
 guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/2-matrix_divided.txt | tail -2
+5 passed and 0 failed.
+Test passed.
+guillaume@ubuntu:~/0x07$
+```
+
+
+### 2. Say my name
+- Task: A function that prints My name is <first name> <last name>
+
+    -> Prototype: def say_my_name(first_name, last_name=""):
+    -> first_name and last_name must be strings otherwise,
+        raise a TypeError exception with the message
+    -> first_name must be a string or last_name must be a string
+- Files: 3-say_my_name.py, tests/3-say_my_name.txt, 3-main.py
+
+**USAGE**
+
+```
+guillaume@ubuntu:~/0x07$ cat 3-main.py
+#!/usr/bin/python3
+say_my_name = __import__('3-say_my_name').say_my_name
+
+say_my_name("John", "Smith")
+say_my_name("Walter", "White")
+say_my_name("Bob")
+try:
+    say_my_name(12, "White")
+except Exception as e:
+    print(e)
+
+guillaume@ubuntu:~/0x07$ ./3-main.py | cat -e
+My name is John Smith$
+My name is Walter White$
+My name is Bob $
+first_name must be a string$
+guillaume@ubuntu:~/0x07$ python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
 5 passed and 0 failed.
 Test passed.
 guillaume@ubuntu:~/0x07$

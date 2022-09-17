@@ -1,0 +1,57 @@
+============================================================
+The 3-say_my_name.py module
+============================================================                            
+
+Using ``say_my_name(first_name, last_name) function``
+
+----------
+TEST CASES
+----------
+
+
+FIRST NAME AND LAST NAME PRESENT
+================================
+``say_my_name`` prints The users first and last name.
+
+::
+	>>> say = __import__("3-say_my_name").say_my_name
+	>>> say("John", "Smith")
+	My name is John Smith
+	>>> say("", "")
+	My name is  
+	
+JUST FIRST NAME PRESENT
+=======================
+``say_my_name`` offers flexibilty of taking just one argument and printing the first name without errors
+
+::
+	>>> say("John")
+	My name is John 
+	>>> say("")
+	My name is  
+	>>> say("joseph")
+	My name is joseph 
+
+FIRST NAME AND LAST NAME ABSENT
+================================
+``say_my_name`` raises TypeError if empty args are passed
+::
+	>>> say()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+OTHER CASES
+===========
+``say_my_name`` raises error if non strings are passed as args
+::
+	>>> say("John", None)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+	>>> say(14, 34)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+	>>> say("", [1,2,3,4])
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+
