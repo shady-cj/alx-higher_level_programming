@@ -59,7 +59,7 @@ guillaume@ubuntu:~/0x07$
 ### 1. Divide a matrix
 
 - ***Task***: Write a function that divides all elements of a matrix.
-- Prototype: def matrix_divided(matrix, div):
+- Prototype: `def matrix_divided(matrix, div):`
 - matrix must be a list of lists of integers or floats,                                     otherwise raise a TypeError exception with the message
         matrix must be a matrix (list of lists) of integers/floats
 - Each row of the matrix must be of the same size, otherwise                                raise a TypeError exception with the message Each row of
@@ -96,7 +96,7 @@ guillaume@ubuntu:~/0x07$
 ### 2. Say my name
 - ***Task***: A function that prints My name is `<first name> <last name>`
 
-- Prototype: def say_my_name(first_name, last_name=""):
+- Prototype: `def say_my_name(first_name, last_name=""):`
 - first_name and last_name must be strings otherwise,
         raise a TypeError exception with the message
 - first_name must be a string or last_name must be a string
