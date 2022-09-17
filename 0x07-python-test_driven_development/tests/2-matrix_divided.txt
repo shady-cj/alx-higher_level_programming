@@ -1,0 +1,126 @@
+============================================================
+The 2-matrix_divided.py module
+============================================================                            
+
+Using ``matrix_divided(matrix, div) function``
+
+----------
+TEST CASES
+----------
+
+
+VALID MATRIX AND DIV VALUE
+==========================
+
+``matrix_divided(matrix, div)`` Returns a valid matrix with the result of the division of each entry present in the matrix list of list provided the matrix is valid list of lists of valid integer/floating point numbers and also the div is a non-zero integer/floating point number.
+
+
+::
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+	>>> mat = [[3,2,7], [4,12,3], [7,1,6], [4,1,7]]
+	>>> mat2 = [[6546, -627, 87, -26, 677], [0, 666, 23, 572,44], [7, 97, 163, 572, 63]]
+	>>> mat3 = [
+	... [37, 2778, 2763, 262, -26746737, 6377],
+	... [52, 3835, 167, 2738, 2876, 267],
+	... [34, 77, 197, 4672, 2674, 552]
+	... ]
+	>>> matrix_divided(mat, 4)
+	[[0.75, 0.5, 1.75], [1.0, 3.0, 0.75], [1.75, 0.25, 1.5], [1.0, 0.25, 1.75]]
+	>>> matrix_divided(mat2, 363)
+	[[18.03, -1.73, 0.24, -0.07, 1.87], [0.0, 1.83, 0.06, 1.58, 0.12], [0.02, 0.27, 0.45, 1.58, 0.17]]
+	>>> matrix_divided(mat3, -677)
+	[[-0.05, -4.1, -4.08, -0.39, 39507.74, -9.42], [-0.08, -5.66, -0.25, -4.04, -4.25, -0.39], [-0.05, -0.11, -0.29, -6.9, -3.95, -0.82]]
+
+INVALID MATRIX
+==============
+
+``matrix_divided(matrix, div)`` raises a Type error if
+
+   -- MATRIX ISN'T A LIST
+   ::
+   	>>> mat = 67
+	>>> matrix_divided(mat, 5)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> mat = {5, 27, 8}
+	>>> matrix_divided(mat, 6)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> mat = {"first": [3, 5,7], "second": [4,2,7]}
+	>>> matrix_divided(mat, 5)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+   
+   -- MATRIX IS LIST OF NON LISTS
+   ::
+   	>>> mat = [[6, 35, 47], 68, None]
+	>>> matrix_divided(mat, 5)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+   
+   -- MATRIX IS LIST OF LIST OF NON INTEGERS OR FLOAT
+   ::
+   	>>> mat = [[7, 5, 6], ['5', 'School',10]]
+	>>> matrix_divided(mat, 10)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+INCONSISTENT MATRIX ROW SIZE
+============================
+``matrix_divided(matrix, div)`` raises a Type error if the size of the rows is not consistent
+
+::
+	>>> mat = [[3,2,10,16], [2,4,6,2], [4,10,5,1,7], [2,12,7,5]]
+	>>> matrix_divided(mat, 4)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+
+DIV IS NON INTEGER/FLOATING POINT NUMBER.
+=========================================
+``matrix_divided(matrix, div)`` raises a type error if div is not a valid number
+
+::
+	>>> mat = [[4, 24, 4], [3, 8, 10]]
+	>>> matrix_divided(mat, None)
+	Traceback (most recent call last):
+	TypeError: div must be a number
+	>>> matrix_divided(mat, [5])
+	Traceback (most recent call last):
+	TypeError: div must be a number
+	>>> matrix_divided(mat, "5")
+	Traceback (most recent call last):
+	TypeError: div must be a number
+	>>> matrix_divided([], "hello")
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+DIV IS ZERO
+===========
+``matrix_divided(matrix, div)`` raises a ZeroDivsionError
+
+::
+	>>> mat = [[3,2,2], [4,-6,1]]
+	>>> matrix_divided(mat, 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+OTHER SCENARIOS
+===============
+``matrix_divided(matrix, div)`` handles every other types of cases
+
+::
+	>>> mat = [[], [], []]
+	>>> mat2 = []
+	>>> mat3 = [[float("nan"), float("inf"), 4], [6, 2, 10]]
+	>>> matrix_divided(mat, 4)
+	[[], [], []]
+	>>> matrix_divided(mat2, 7)
+	[]
+	>>> matrix_divided(mat3, 2)
+	[[nan, inf, 2.0], [3.0, 1.0, 5.0]]
+	>>> matrix_divided(mat3, float('inf'))
+	[[nan, nan, 0.0], [0.0, 0.0, 0.0]]
+	>>> matrix_divided(mat3, float('nan'))
+	[[nan, nan, nan], [nan, nan, nan]]
+
+
