@@ -94,7 +94,7 @@ guillaume@ubuntu:~/0x07$
 
 
 ### 2. Say my name
-- ***Task ***:A function that prints My name is `<first name> <last name>`
+- ***Task***: A function that prints My name is `<first name> <last name>`
 
 - Prototype: def say_my_name(first_name, last_name=""):
 - first_name and last_name must be strings otherwise,
