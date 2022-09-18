@@ -59,15 +59,15 @@ guillaume@ubuntu:~/0x07$
 ### 1. Divide a matrix
 
 - ***Task***: Write a function that divides all elements of a matrix.
-- Prototype: `def matrix_divided(matrix, div)`
-- matrix must be a list of lists of integers or floats,                                     otherwise raise a TypeError exception with the message
+	- Prototype: `def matrix_divided(matrix, div)`
+	- matrix must be a list of lists of integers or floats,                                     otherwise raise a TypeError exception with the message
         matrix must be a matrix (list of lists) of integers/floats
-- Each row of the matrix must be of the same size, otherwise                                raise a TypeError exception with the message Each row of
+	- Each row of the matrix must be of the same size, otherwise                                raise a TypeError exception with the message Each row of
         the matrix must have the same size
-- div must be a number (integer or float), otherwise raise                                  a TypeError exception with the message div must be a number
-- div can’t be equal to 0, otherwise raise a ZeroDivisionError                              exception with the message division by zero
-- All elements of the matrix should be divided by div,                                      rounded to 2 decimal places
-        Returns a new matrix
+	- div must be a number (integer or float), otherwise raise                                  a TypeError exception with the message div must be a number
+	- div can’t be equal to 0, otherwise raise a ZeroDivisionError                              exception with the message division by zero
+	- All elements of the matrix should be divided by div,                                      rounded to 2 decimal places
+	- Returns a new matrix
 - ***Files***: 2-matrix_divided.py, tests/2-matrix_divided.txt, 2-main.py
 
 **USAGE**
@@ -96,10 +96,10 @@ guillaume@ubuntu:~/0x07$
 ### 2. Say my name
 - ***Task***: A function that prints My name is `<first name> <last name>`
 
-- Prototype: `def say_my_name(first_name, last_name=""):`
-- first_name and last_name must be strings otherwise,
-        raise a TypeError exception with the message
-- first_name must be a string or last_name must be a string
+	- Prototype: `def say_my_name(first_name, last_name=""):`
+	- first_name and last_name must be strings otherwise,
+         raise a TypeError exception with the message
+	- first_name must be a string or last_name must be a string
 - ***Files***: 3-say_my_name.py, tests/3-say_my_name.txt, 3-main.py
 
 **USAGE**
@@ -134,7 +134,7 @@ guillaume@ubuntu:~/0x07$
 - ***Task*** - Write  a function that prints a square
 with the character #.
 
-    - Prototype: def print_square(size):
+    - Prototype: `def print_square(size):`
     - size is the size length of the square
     - size must be an integer, otherwise raise a TypeError exception
         with the message size must be an integer
