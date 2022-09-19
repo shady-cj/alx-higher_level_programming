@@ -70,7 +70,6 @@ class Rectangle:
 
     def __repr__(self):
         """ Defines the repr version of the class for each instance"""
-       #  return ("Rectangle({},{})".format(self.width, self.height))
-        rect = "Rectangle(" + str(self.__width)
-        rect += ", " + str(self.__height) + ")"
+        rect = "Rectangle(" + str(self.width)
+        rect += ", " + str(self.height) + ")"
         return (rect)
