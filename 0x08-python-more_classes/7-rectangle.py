@@ -20,7 +20,7 @@ class Rectangle:
     number_of_instances = 0
 
     """ The print symbol to be printed when str() is
-    invoked 
+    invoked
     """
     print_symbol = "#"
 
