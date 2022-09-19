@@ -20,7 +20,7 @@ class Rectangle:
     def width(self):
         """ A getter method that returns the width """
         return self.__width
-    
+
     @property
     def height(self):
         """ A getter method that returns the heiggt """
@@ -34,7 +34,7 @@ class Rectangle:
         if w < 0:
             raise ValueError("width must be >= 0")
         self.__width = w
-    
+
     @height.setter
     def height(self, h):
         """ A setter method that sets the height of the rectangle """
