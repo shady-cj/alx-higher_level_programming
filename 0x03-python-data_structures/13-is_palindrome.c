@@ -11,68 +11,34 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *new_head = NULL;
-	listint_t *ptr_1 = NULL;
-	listint_t *ptr_2 = NULL;
-	int is_palindrome;
+	listint_t *ptr_right = NULL;
+	listint_t *ptr_left = NULL;
 
 	if (*head == NULL)
 		return (1);
-	duplicate_linked_list(&new_head, *head);
-	ptr_1 = *head;
-	ptr_2 = new_head;
-
-	is_palindrome = compare_lists(ptr_1, ptr_2);
-	free_listint(new_head);
-	return (is_palindrome);
+	ptr_left = *head;
+	ptr_right = *head;
+	return (compare_rec(&ptr_left, ptr_right));
 }
 
 /**
- * duplicate_linked_list - Duplicates the linked list in reverse.
- * @new_head: The address to the new head node
- * @head: The main head node
- * Return: void
- */
-
-void duplicate_linked_list(listint_t **new_head, listint_t *head)
-{
-	listint_t *ptr = NULL;
-	listint_t *new = NULL;
-	listint_t *current = NULL;
-
-	current = head;
-	ptr = malloc(sizeof(listint_t));
-	if (ptr == NULL)
-		return;
-	ptr->n = current->n;
-	ptr->next = NULL;
-	current = current->next;
-	while (current != NULL)
-	{
-		new = malloc(sizeof(listint_t));
-		if (new == NULL)
-			return;
-		new->n = current->n;
-		new->next = ptr;
-		ptr = new;
-		current = current->next;
-	}
-	*new_head = ptr;
-}
-
-/**
- * compare_lists - This function compares the 2 lists.. the main list and
- * the reversed list recursively
- * @reversed_head: The head node to the reversed list
- * @head: The head node to the main list
+ * compare_rec - This function compares the 2 lists recursively.
+ * @right_ptr: The head node which moves to the right during the
+ * recursive call.
+ * @left_ptr: The address of the pointer to the main head node.
  * Return: 1 if palindromic and 0 if not
  */
 
-int compare_lists(listint_t *head, listint_t *reversed_head)
+int compare_rec(listint_t **left_ptr, listint_t *right_ptr)
 {
-	if (head == NULL || reversed_head == NULL)
+	int ret, cmp;
+	if (right_ptr == NULL)
 		return (1);
-	if (head->n != reversed_head->n)
+
+	ret = compare_rec(left_ptr, right_ptr->next);
+	if (ret == 0)
 		return (0);
-	return (compare_lists(head->next, reversed_head->next));
+	cmp = (*left_ptr)->n == right_ptr->n;
+	*left_ptr = (*left_ptr)->next;
+	return (cmp);
 }

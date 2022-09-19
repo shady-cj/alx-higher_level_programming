@@ -1,0 +1,66 @@
+============================================================
+The 4-print_square.py module
+============================================================                            
+
+Using ``print_square(size) function``
+
+----------
+TEST CASES
+----------
+
+
+VALID SIZE
+==========
+``print_sqaure(size)`` prints a square of height and width of size
+
+::
+	>>> p_sq = __import__("4-print_square").print_square
+	>>> p_sq(4)
+	####
+	####
+	####
+	####
+	>>> p_sq(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	>>> p_sq(0)
+	>>>
+
+INVALID SIZE TYPE
+=================
+``print_square(size)`` raises a TypeError if size is not specifcally an integer
+
+::
+	>>> p_sq(5.5)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+	>>> p_sq("john")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+	>>> p_sq(-75.4)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+SIZE LESS THAN 0
+================
+``print_square(size)`` raises a Type error if size is less than zero
+
+::
+	>>> p_sq(0)
+	>>> p_sq(-68.3)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+	>>> p_sq(-4)
+	Traceback (most recent call last):
+	TypeError: size must be >= 0
+
+
+
