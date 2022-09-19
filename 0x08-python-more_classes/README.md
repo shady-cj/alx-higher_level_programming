@@ -166,7 +166,7 @@ guillaume@ubuntu:~/0x08$
 
 ### 4. Eval is magic
 
-- ***Task*** - Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
+- ***Task*** - Write a class Rectangle that defines a rectangle by: (based on 3-rectangle.py)
 
 	- Private instance attribute: width:
 		- property `def width(self):` to retrieve it
@@ -255,7 +255,7 @@ guillaume@ubuntu:~/0x08$
 
 ### 5. Detect instance deletion
 
-- ***Task*** - Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
+- ***Task*** - Write a class Rectangle that defines a rectangle by: (based on 4-rectangle.py)
 
 	- Private instance attribute: width:
 		- property `def width(self):` to retrieve it
@@ -305,7 +305,7 @@ guillaume@ubuntu:~/0x08$
 
 ### 6. How many instances
 
-- ***Task*** - Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
+- ***Task*** - Write a class Rectangle that defines a rectangle by: (based on 5-rectangle.py)
 
 	- Private instance attribute: width:
 		- property `def width(self):` to retrieve it
@@ -359,7 +359,7 @@ guillaume@ubuntu:~/0x08$
 
 ### 7. Change representation
 
-- ***Task*** - Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
+- ***Task*** - Write a class Rectangle that defines a rectangle by: (based on 6-rectangle.py)
 
 	- Private instance attribute: width:
 		- property `def width(self):` to retrieve it
