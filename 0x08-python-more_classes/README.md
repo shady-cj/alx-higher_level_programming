@@ -121,10 +121,10 @@ guillaume@ubuntu:~/0x08$
 			- height must be an integer, otherwise raise a TypeError exception with the message height must be an integer
 			- if height is less than 0, raise a ValueError exception with the message height must be >= 0
 	- Instantiation with optional width and height: def __init__(self, width=0, height=0):
-	- Public instance method: def area(self): that returns the rectangle area
-	- Public instance method: def perimeter(self): that returns the rectangle perimeter:
+	- Public instance method: `def area(self):` that returns the rectangle area
+	- Public instance method: `def perimeter(self):` that returns the rectangle perimeter:
 		- if width or height is equal to 0, perimeter is equal to 0
-	- print() and str() should print the rectangle with the character #: (see example below)
+	- `print()` and `str()` should print the rectangle with the character #: (see example below)
 		- if width or height is equal to 0, return an empty string
 - ***Files*** - 3-rectangle.py, 3-main.py
 
