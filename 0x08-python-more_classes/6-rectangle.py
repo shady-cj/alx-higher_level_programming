@@ -14,7 +14,6 @@ class Rectangle:
     and area as well as printing it
     """
 
-
     """ defining number_of_instances to keep track of number
     of instances launched
     """
