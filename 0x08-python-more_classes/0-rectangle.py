@@ -5,6 +5,7 @@
 A module that defines a Rectangle class
 """
 
+
 class Rectangle:
     """
     A rectange class
