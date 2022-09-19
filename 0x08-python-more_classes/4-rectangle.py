@@ -70,4 +70,4 @@ class Rectangle:
 
     def __repr__(self):
         """ Defines the repr version of the class for each instance"""
-        return "Rectangle({},{})".format(self.width, self.height)
+        return "Rectangle({},{})".format(str(self.width), str(self.height))
