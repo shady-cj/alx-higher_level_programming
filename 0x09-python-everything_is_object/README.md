@@ -136,4 +136,17 @@ Write the name of the function in the file, without ()...
 >>> print(l1 == l2)
 ```
 
+### 11. And with a list, is it the same
+
+- ***Task*** - What do these 3 lines print?
+- ***Files*** - 11-answer.txt
+
+**Sample**
+
+```
+>>> l1 = [1, 2, 3]
+>>> l2 = [1, 2, 3] 
+>>> print(l1 is l2)
+```
+
 
