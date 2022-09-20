@@ -2,7 +2,7 @@
 
 
 """
-A module that provides a function that multiply two matrix.
+A module that provides a function that multiplies two matrix.
 """
 
 
