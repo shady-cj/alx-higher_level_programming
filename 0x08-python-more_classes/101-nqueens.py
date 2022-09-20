@@ -13,10 +13,11 @@ def nqueens(N, col, not_safe=set([]), main=0):
     queens of NxN chessboard
     """
     if col >= N:
-        return []
+        return [[]]
 
     init = set(not_safe)
     solution = []
+    possibilities = []
     for i in range(N):
         if (col, i) not in not_safe:
             solution.append([col, i])
@@ -33,22 +34,23 @@ def nqueens(N, col, not_safe=set([]), main=0):
                     not_safe.add((c, rb))
             mat = nqueens(N, col + 1, not_safe)
             if mat is not None:
-                solution += mat
-                if main:
-                    print(solution)
-                    solution = []
-                    not_safe.clear()
-                else:
-                    return solution
+                for possible in mat:
+                    possibilities.append(solution + possible)
+                solution = []
             else:
                 solution.pop()
-                not_safe.clear()
-                not_safe.update(init)
+            not_safe.clear()
+            not_safe.update(init)
+    if main:
+        for p in possibilities:
+            print(p)
+    if len(possibilities) > 0:
+        return possibilities
     return None
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
     try:
