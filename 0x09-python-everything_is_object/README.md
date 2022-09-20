@@ -93,3 +93,17 @@ Write the name of the function in the file, without ()...
 >>> s2 = s1
 >>> print(s1 is s2)
 ```
+
+
+### 8. Is really equal
+
+- ***Task*** - What do these 3 lines print?
+- ***Files*** - 8-answer.txt
+
+**Sample**
+
+```
+>>> s1 = "Best School"
+>>> s2 = "Best School"
+>>> print(s1 == s2)
+```
