@@ -1,0 +1,214 @@
+============================================================
+The 101-lazy_matrix_mul.py module
+============================================================                            
+
+Using ``matrix_mul(m_a, m_b)``
+
+----------
+TEST CASES
+----------
+
+
+VALID m_a AND m_b THAT CAN BE MULTIPLIED
+=========================================
+The ``lazy_matrix_mul(m_a, m_b)`` returns the multiplication of the 2 matrix m_a and m_b when they are valid arguments.
+
+::
+	>>> mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+	>>> ma = [[1, 2], [3, 4]]
+	>>> mb = [[1, 2], [3, 4]]
+	>>> mul(ma,mb)
+	[[7, 10], [15, 22]]
+	>>> ma = [[1, 2]]
+	>>> mb = [[3, 4], [5, 6]]
+	>>> mul(ma,mb)
+	[[13, 16]]
+	>>> ma = [[4, 6]]
+	>>> mb = [[3], [4]]
+	>>> mul(ma,mb)
+	[[36]]
+	>>> ma = [[3]]
+	>>> mb = [[5]]
+	>>> mul(ma,mb)
+	[[15]]
+
+
+WHEN ONE OF m_a OR m_b ISN'T A LIST
+===================================
+
+The ``lazy_matrix_mul(m_a, m_b)`` raises an error if one or both of m_a and m_b isn't a list
+
+::
+	>>> ma = 4
+	>>> mb = [[1,2], [3,4]]
+	>>> mul(ma,mb)
+	Traceback (most recent call last):
+	TypeError: m_a must be a list
+	>>> ma, mb = mb, ma
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_b must be a list
+	>>> ma = None
+	>>> mb = 4
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a must be a list
+
+WHEN ONE OF m_a OR m_b ISN'T A LIST OF LISTS
+=============================================
+
+The ``lazy_matrix_mul(m_a, m_b)`` raises an error if one or both of m_a and m_b isn't a list of lists
+
+::
+	>>> ma = [[1,24], [3,6]]
+	>>> mb = [4, 2, 6]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_b must be a list of lists
+	>>> ma, mb = mb, ma
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a must be a list of lists
+	>>> ma = [3]
+	>>> mb = [8]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a must be a list of lists
+	>>> ma = [[4, 3], [7, 8], 5, [6, 7]]
+	>>> mb = [[3,5,5], [4,5,7]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a must be a list of lists
+
+WHEN ONE OF m_a OR m_b OR BOTH IS AN EMPTY LIST
+==============================================
+``lazy_matrix_mul(m_a, m_b)`` raises a ValueError if one or both of m_a and m_b is an empty list
+
+::
+
+	>>> ma = [[]]
+	>>> mb = [[4,5]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	ValueError: m_a can't be empty
+	>>> ma = [[3]]
+	>>> mb = []
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	ValueError: m_b can't be empty
+	>>> ma = []
+	>>> mb = [[]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	ValueError: m_a can't be empty
+
+WHEN ONE OR BOTH OF m_a AND m_b LIST OF LISTS ELEMENTS ISN'T AN INTEGER OR FLOAT
+=================================================================================
+
+``lazy_matrix_mul(m_a, m_b)`` raises a TypeError if one or both of m_a and m_b list of lists element isn't of a valid multipliable type(int or float)
+
+::
+	>>> ma = [[4, 5, 6], ['5', 5, 2], [5, 7, None]]
+	>>> mb = [[4], [7], [9]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a should contain only integers or floats
+	>>> ma = [[2, 3], [7, 10]]
+	>>> mb = [[5], [[6,7]]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_b should contain only integers or floats
+	>>> ma = [[None, None]]
+	>>> mb = [[None], [None]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a should contain only integers or floats
+
+
+WHEN ONE OR BOTH OF m_a AND m_b IS NOT A RECTANGLE(EQUAL NUMBER OF ROWS FOR EACH MATRIX)
+========================================================================================
+
+``lazy_matrix_mul(m_a, m_b)`` raises a TypeError if one of both of m_a and m_b does not have equal number of rows or consistent number of rows
+
+
+::
+
+	>>> ma = [[3,4,5], [5], [3,5,7]]
+	>>> mb = [[5,4], [7,8], [0,9]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: each row of m_a must be of the same size
+	>>> ma = [[3, 4, 5], [1, 2, 8]]
+	>>> mb = [[7], [2, 4], [8]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: each row of m_b must be of the same size
+	>>> ma = [[3,6], [3,5,6], [3]]
+	>>> mb = [[4], [3, 7]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: each row of m_a must be of the same size
+
+
+WHEN m_a AND m_b CAN'T BE MULTIPLIED
+=====================================
+
+``lazy_matrix_mul(m_a, m_b)`` raises a ValueError if the number of elements in the rows of m_a isn't equal the number of rows of m_b
+
+::
+
+	>>> ma = [[3, 5], [4, 5]]
+	>>> mb = [[4,5]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	ValueError: m_a and m_b can't be multiplied
+	>>> ma = [[5, 4, 7], [6, 6, 7]]
+	>>> mb = [[7, 4, 2], [8, 3, 0]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	ValueError: m_a and m_b can't be multiplied
+
+COMBINATION OF ALL EDGE CASES TO TEST PRIORITIES BASED ON REQUIREMENTS
+======================================================================
+This testcase test for combination different erros from above and test for their priorities in order of priority.
+::
+	>>> ma = 67
+	>>> mb = [[3,4], [4,5,6]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a must be a list
+	>>> ma, mb = mb, ma
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_b must be a list
+	>>> ma = [[4, 6], 5]
+	>>> mb = [[3, None], [4,2,6]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a must be a list of lists
+	>>> ma = [None]
+	>>> mb = [[]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a must be a list of lists
+	>>> ma = [[4, 5]]
+	>>> mb = []
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	ValueError: m_b can't be empty
+	>>> ma = [[3, 4, 5], [2, 4]]
+	>>> mb = [[3,4], [2, 8]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: each row of m_a must be of the same size
+	>>> ma = [[4, 10], [5, None]]
+	>>> mb = [[6, 4]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: m_a should contain only integers or floats
+	>>> ma = [[3, 6], [4, 2]]
+	>>> mb = [[3, 5], [2, 5, 7], [1, 8]]
+	>>> mul(ma, mb)
+	Traceback (most recent call last):
+	TypeError: each row of m_b must be of the same size
+
