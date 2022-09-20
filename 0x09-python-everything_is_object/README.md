@@ -513,3 +513,24 @@ julien@ubuntu:/python3$
 	- How many int objects are created by the execution of the last line of the script (`104-line5.txt`)
 
 - ***Files*** - 104-line1.txt, 104-line2.txt, 104-line3.txt, 104-line4.txt, 104-line5.txt
+
+
+
+### 33. int 3/3
+
+- ***Task*** - Assuming we are using a CPython implementation of Python3 with default options/configuration:
+
+	- Before the execution of line 2 (print("Love")), how many int objects have been created and are still in memory? (105-line1.txt)
+	- Why? (optional blog post :))
+Hint: NSMALLPOSINTS, NSMALLNEGINTS
+
+- ***Files*** - 105-line1.txt
+
+**Sample**
+```
+julien@twix:/tmp/so$ cat int.py
+print("I")
+print("Love")
+print("Python")
+julien@ubuntu:/tmp/so$
+```
