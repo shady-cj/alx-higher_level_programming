@@ -53,7 +53,7 @@ The ``lazy_matrix_mul(m_a, m_b)`` raises an error if one or both of m_a and m_b 
 	>>> mb = 4
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	ValueError: Scalar operands are not allowed, use '*' instead
+	TypeError: Object arrays are not currently supported
 
 WHEN ONE OF m_a OR m_b ISN'T A LIST OF LISTS
 =============================================
@@ -112,17 +112,17 @@ WHEN ONE OR BOTH OF m_a AND m_b LIST OF LISTS ELEMENTS ISN'T AN INTEGER OR FLOAT
 	>>> mb = [[4], [7], [9]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_a should contain only integers or floats
+	TypeError: Object arrays are not currently supported
 	>>> ma = [[2, 3], [7, 10]]
 	>>> mb = [[5], [[6,7]]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_b should contain only integers or floats
+	ValueError: setting an array element with a sequence.
 	>>> ma = [[None, None]]
 	>>> mb = [[None], [None]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_a should contain only integers or floats
+	TypeError: Object arrays are not currently supported
 
 
 WHEN ONE OR BOTH OF m_a AND m_b IS NOT A RECTANGLE(EQUAL NUMBER OF ROWS FOR EACH MATRIX)
@@ -137,17 +137,17 @@ WHEN ONE OR BOTH OF m_a AND m_b IS NOT A RECTANGLE(EQUAL NUMBER OF ROWS FOR EACH
 	>>> mb = [[5,4], [7,8], [0,9]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: each row of m_a must be of the same size
+	ValueError: setting an array element with a sequence.
 	>>> ma = [[3, 4, 5], [1, 2, 8]]
 	>>> mb = [[7], [2, 4], [8]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: each row of m_b must be of the same size
+	ValueError: setting an array element with a sequence.
 	>>> ma = [[3,6], [3,5,6], [3]]
 	>>> mb = [[4], [3, 7]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: each row of m_a must be of the same size
+	ValueError: setting an array element with a sequence.
 
 
 WHEN m_a AND m_b CAN'T BE MULTIPLIED
@@ -161,12 +161,12 @@ WHEN m_a AND m_b CAN'T BE MULTIPLIED
 	>>> mb = [[4,5]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	ValueError: m_a and m_b can't be multiplied
+	ValueError: shapes (2,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
 	>>> ma = [[5, 4, 7], [6, 6, 7]]
 	>>> mb = [[7, 4, 2], [8, 3, 0]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	ValueError: m_a and m_b can't be multiplied
+	ValueError: shapes (2,3) and (2,3) not aligned: 3 (dim 1) != 2 (dim 0)
 
 COMBINATION OF ALL EDGE CASES TO TEST PRIORITIES BASED ON REQUIREMENTS
 ======================================================================
@@ -176,39 +176,38 @@ This testcase test for combination different erros from above and test for their
 	>>> mb = [[3,4], [4,5,6]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_a must be a list
+	ValueError: setting an array element with a sequence.
 	>>> ma, mb = mb, ma
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_b must be a list
+	ValueError: setting an array element with a sequence.
 	>>> ma = [[4, 6], 5]
 	>>> mb = [[3, None], [4,2,6]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_a must be a list of lists
+	TypeError: Object arrays are not currently supported
 	>>> ma = [None]
 	>>> mb = [[]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_a must be a list of lists
+	TypeError: Object arrays are not currently supported
 	>>> ma = [[4, 5]]
 	>>> mb = []
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	ValueError: m_b can't be empty
+	ValueError: shapes (1,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
 	>>> ma = [[3, 4, 5], [2, 4]]
 	>>> mb = [[3,4], [2, 8]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: each row of m_a must be of the same size
+	ValueError: setting an array element with a sequence.
 	>>> ma = [[4, 10], [5, None]]
 	>>> mb = [[6, 4]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_a should contain only integers or floats
+	TypeError: Object arrays are not currently supported
 	>>> ma = [[3, 6], [4, 2]]
 	>>> mb = [[3, 5], [2, 5, 7], [1, 8]]
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: each row of m_b must be of the same size
-
+	ValueError: setting an array element with a sequence.
