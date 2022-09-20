@@ -371,4 +371,17 @@ b = (1, 2)
 a is b
 ```
 
+### 26. Empty is not empty
+
+- ***Task*** - What does this script print?
+- ***Files*** - 26-answer.txt
+
+**Sample**
+
+```
+a = ()
+b = ()
+a is b
+```
+
 
