@@ -342,3 +342,20 @@ Is `a` a tuple? Answer with Yes or No.
 Is `a` a tuple? Answer with Yes or No.
 
 - ***Files*** - 23-answer.txt
+
+
+
+### 24. Who I am?
+
+- ***Task*** - What does this script print?
+- ***Files*** - 24-answer.txt
+
+**Sample**
+
+```
+a = (1)
+b = (1)
+a is b
+```
+
+
