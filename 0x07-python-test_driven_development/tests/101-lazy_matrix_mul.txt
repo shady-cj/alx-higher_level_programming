@@ -18,19 +18,20 @@ The ``lazy_matrix_mul(m_a, m_b)`` returns the multiplication of the 2 matrix m_a
 	>>> ma = [[1, 2], [3, 4]]
 	>>> mb = [[1, 2], [3, 4]]
 	>>> mul(ma,mb)
-	[[7, 10], [15, 22]]
+	array([[7, 10],
+	    [15, 22]])
 	>>> ma = [[1, 2]]
 	>>> mb = [[3, 4], [5, 6]]
 	>>> mul(ma,mb)
-	[[13, 16]]
+	array([[13, 16]])
 	>>> ma = [[4, 6]]
 	>>> mb = [[3], [4]]
 	>>> mul(ma,mb)
-	[[36]]
+	array([[36]])
 	>>> ma = [[3]]
 	>>> mb = [[5]]
 	>>> mul(ma,mb)
-	[[15]]
+	array([[15]])
 
 
 WHEN ONE OF m_a OR m_b ISN'T A LIST
@@ -43,17 +44,16 @@ The ``lazy_matrix_mul(m_a, m_b)`` raises an error if one or both of m_a and m_b 
 	>>> mb = [[1,2], [3,4]]
 	>>> mul(ma,mb)
 	Traceback (most recent call last):
-	TypeError: m_a must be a list
+	ValueError: Scalar operands are not allowed, use '*' instead
 	>>> ma, mb = mb, ma
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_b must be a list
+	ValueError: Scalar operands are not allowed, use '*' instead
 	>>> ma = None
 	>>> mb = 4
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
-	TypeError: m_a must be a list
-
+	ValueError: Scalar operands are not allowed, use '*' instead
 WHEN ONE OF m_a OR m_b ISN'T A LIST OF LISTS
 =============================================
 
