@@ -306,3 +306,15 @@ guillaume@ubuntu:~/0x09$
 Is `a` a tuple? Answer with Yes or No.
 
 - ***Files*** - 20-answer.txt
+
+
+
+### 21. Tuple or not?
+
+- ***Task***
+	```
+	a = (1, 2)
+	```
+Is `a` a tuple? Answer with Yes or No.
+
+- ***Files*** - 21-answer.txt
