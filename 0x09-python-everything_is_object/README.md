@@ -401,3 +401,21 @@ Will the last line of this script print 139926795932424? Answer with Yes or No.
 - ***Files*** - 27-answer.txt
 
 
+
+
+### 28. Same or not?
+
+- ***Task*** 
+	```
+	>>> a
+	[1, 2, 3]
+	>>> id (a)
+	139926795932424
+	>>> a += [4]
+	>>> id(a)
+	```
+Will the last line of this script print 139926795932424? Answer with Yes or No.
+
+- ***Files*** - 28-answer.txt
+
+
