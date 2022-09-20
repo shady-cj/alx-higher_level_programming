@@ -175,4 +175,16 @@ Write the name of the function in the file, without ()...
 >>> print(l1 is l2)
 ```
 
+### 14. List append
 
+- ***Task*** - What does this script print?
+- ***Files*** - 14-answer.txt
+
+**Sample**
+
+```
+l1 = [1, 2, 3]
+l2 = l1
+l1.append(4)
+print(l2)
+```
