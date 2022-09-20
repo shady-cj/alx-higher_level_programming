@@ -54,6 +54,7 @@ The ``lazy_matrix_mul(m_a, m_b)`` raises an error if one or both of m_a and m_b 
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
 	ValueError: Scalar operands are not allowed, use '*' instead
+
 WHEN ONE OF m_a OR m_b ISN'T A LIST OF LISTS
 =============================================
 
