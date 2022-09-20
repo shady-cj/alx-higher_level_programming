@@ -295,3 +295,14 @@ guillaume@ubuntu:~/0x09$ wc -l 19-copy_list.py
 3 19-copy_list.py
 guillaume@ubuntu:~/0x09$
 ```
+
+
+### 20. Tuple or not?
+
+- ***Task***
+	```
+	a = ()
+	```
+Is `a` a tuple? Answer with Yes or No.
+
+- ***Files*** - 20-answer.txt
