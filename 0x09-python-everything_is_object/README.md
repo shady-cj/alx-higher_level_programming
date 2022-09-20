@@ -79,3 +79,17 @@ Write the name of the function in the file, without ()...
 >>> s2 = s1
 >>> print(s1 == s2)
 ```
+
+
+### 7. Is the same
+
+- ***Task*** - What do these 3 lines print?
+- ***Files*** - 7-answer.txt
+
+**Sample**
+
+```
+>>> s1 = "Best"
+>>> s2 = s1
+>>> print(s1 is s2)
+```
