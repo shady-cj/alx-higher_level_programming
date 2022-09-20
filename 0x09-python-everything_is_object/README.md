@@ -110,7 +110,7 @@ Write the name of the function in the file, without ()...
 
 
 
-### 8. Is really the same
+### 9. Is really the same
 
 - ***Task*** - What do these 3 lines print?
 - ***Files*** - 9-answer.txt
@@ -122,3 +122,18 @@ Write the name of the function in the file, without ()...
 >>> s2 = "Best School"
 >>> print(s1 is s2)
 ```
+
+### 10. And with a list, is it equal
+
+- ***Task*** - What do these 3 lines print?
+- ***Files*** - 10-answer.txt
+
+**Sample**
+
+```
+>>> l1 = [1, 2, 3]
+>>> l2 = [1, 2, 3] 
+>>> print(l1 == l2)
+```
+
+
