@@ -318,3 +318,14 @@ Is `a` a tuple? Answer with Yes or No.
 Is `a` a tuple? Answer with Yes or No.
 
 - ***Files*** - 21-answer.txt
+
+
+### 22. Tuple or not?
+
+- ***Task***
+	```
+	a = (1)
+	```
+Is `a` a tuple? Answer with Yes or No.
+
+- ***Files*** - 22-answer.txt
