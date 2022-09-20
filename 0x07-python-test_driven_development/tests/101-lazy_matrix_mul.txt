@@ -18,8 +18,8 @@ The ``lazy_matrix_mul(m_a, m_b)`` returns the multiplication of the 2 matrix m_a
 	>>> ma = [[1, 2], [3, 4]]
 	>>> mb = [[1, 2], [3, 4]]
 	>>> mul(ma,mb)
-	array([[7, 10],
-	    [15, 22]])
+	array([[ 7, 10],
+	       [15, 22]])
 	>>> ma = [[1, 2]]
 	>>> mb = [[3, 4], [5, 6]]
 	>>> mul(ma,mb)
