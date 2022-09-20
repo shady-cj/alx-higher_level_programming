@@ -54,3 +54,15 @@ Write the name of the function in the file, without ()...
 >>> a = 89
 >>> b = a
 ```
+
+### 5. Right count =+
+
+- ***Task*** - In the following code, do `a` and `b` point to the same object? Answer with Yes or No.
+- ***Files*** - 5-answer.txt
+
+
+**Sample**
+```
+>>> a = 89
+>>> b = a + 1
+```
