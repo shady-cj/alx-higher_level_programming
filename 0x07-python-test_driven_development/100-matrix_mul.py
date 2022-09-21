@@ -6,7 +6,7 @@ A module that provides a function that multiplies two matrix.
 """
 
 
-def matrix_mul(m_a, m_b):
+def matrix_mul(m_a = [[1]], m_b=[[1]]):
     """
     The function multiplies 2 matrix (list of lists)
     and raises exception if there is any form of
