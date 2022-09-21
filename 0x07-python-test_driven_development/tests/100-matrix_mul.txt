@@ -211,4 +211,9 @@ This testcase test for combination different erros from above and test for their
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
 	TypeError: each row of m_b must be of the same size
-
+	>>> mul()
+	Traceback (most recent call last):
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+	>>> mul([[3]])
+	Traceback (most recent call last):
+	TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
