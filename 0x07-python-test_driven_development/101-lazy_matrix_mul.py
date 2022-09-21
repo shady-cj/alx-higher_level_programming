@@ -2,7 +2,7 @@
 import numpy as np
 
 """
-Provides a function that multiplies two matrix
+This module Provides a function that multiplies two matrix
 """
 
 
