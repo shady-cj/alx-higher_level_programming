@@ -213,7 +213,7 @@ This testcase test for combination different erros from above and test for their
 	ValueError: setting an array element with a sequence.
 	>>> mul()
 	Traceback (most recent call last):
-	TypeError: matmul() takes from 2 to 3 positional arguments but 0 were given
+	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b
 	>>> mul([[3]])
 	Traceback (most recent call last):
-	TypeError: matmul() takes from 2 to 3 positional arguments but 1 were given
+	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
