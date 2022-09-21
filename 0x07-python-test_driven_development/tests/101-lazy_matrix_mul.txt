@@ -211,3 +211,9 @@ This testcase test for combination different erros from above and test for their
 	>>> mul(ma, mb)
 	Traceback (most recent call last):
 	ValueError: setting an array element with a sequence.
+	>>> mul()
+	Traceback (most recent call last):
+	TypeError: matmul() takes from 2 to 3 positional arguments but 0 were given
+	>>> mul([[3]])
+	Traceback (most recent call last):
+	TypeError: matmul() takes from 2 to 3 positional arguments but 1 were given
