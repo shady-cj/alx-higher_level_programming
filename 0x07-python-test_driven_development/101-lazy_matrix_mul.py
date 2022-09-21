@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import numpy as np
-
 """
 This module Provides a function that multiplies two matrix
 """
+import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
