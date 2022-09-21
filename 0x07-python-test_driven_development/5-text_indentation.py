@@ -11,6 +11,7 @@ after each of these characters: ., ? and :
     - You are not allowed to import any module
 """
 
+
 def text_indentation(text):
     """
     The function accepts a string as an argument parses/validate it
