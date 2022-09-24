@@ -15,5 +15,5 @@ void print_python_string(PyObject *p)
 
 	printf("[.] string object info\n");
 	size = ((*PyVarObject)(p))->ob_size;
-	print("%lu\n", size)
+	printf("%lu\n", size);
 }
