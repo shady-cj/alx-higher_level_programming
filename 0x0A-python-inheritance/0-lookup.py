@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/python3
 
 """
 This module returns the attributes and methods of a class
