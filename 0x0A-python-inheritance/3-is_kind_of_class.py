@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""A module that checks if an object is kind of the same 
+"""A module that checks if an object is kind of the same
 object """
 
 

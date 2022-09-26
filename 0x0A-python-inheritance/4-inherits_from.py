@@ -7,6 +7,8 @@ def inherits_from(obj, a_class):
     """
     checks if obj is inherited from the class a_class and return True
     """
-    if issubclass(obj, a_class):
+    if obj.__class__ == a_class:
+        return False
+    if issubclass(obj.__class__, a_class):
         return True
     return False
