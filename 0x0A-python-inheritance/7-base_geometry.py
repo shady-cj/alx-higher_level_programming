@@ -16,7 +16,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         try:
-            if type(value) not in (str, int):
+            if type(value) != int:
                 raise TypeError
             num = int(value)
         except (TypeError, ValueError):
