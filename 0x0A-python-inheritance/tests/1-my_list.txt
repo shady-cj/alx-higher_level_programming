@@ -26,6 +26,16 @@ RANDOM NUMBERS
 	>>> print(my_list)
 	[1, 4, 2, 3, 5]
 	
+NEGATIVE NUMBERS
+================
+::	
+	>>> mylist4 = MyList()
+	>>> mylist4.append(-8)
+	>>> mylist4.append(-7)
+	>>> mylist4.append(0)
+	>>> mylist4.append(-10)
+	>>> mylist4.print_sorted()
+	[-10, -8, -7, 0]
 
 ONLY ONE NUMBER IN THE LIST
 ===========================
