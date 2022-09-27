@@ -11,13 +11,6 @@ class MyList(list):
     """
    
     def print_sorted(self):
-        sorted_list = []
-        for num in self:
-            if not len(sorted_list):
-                sorted_list.append(num)
-                continue
-            for index, entry in enumerate(sorted_list):
-                if num < entry and num > sorted_list[index + 1]:
-                    sorted_list.insert(index+1, nu
-                    
+        sorted_list = list(self)
+        sorted_list.sort()
         print(sorted_list)
