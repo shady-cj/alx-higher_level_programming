@@ -14,6 +14,13 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-        
+
     def to_json(self, attrs=None):
-        pass
+        if attrs != None and type(attrs) == list:
+            new_dict = {}
+            for el in attrs:
+                dict_val = self.__dict__.get(el)
+                if dict_val != None:
+                    new_dict[el] = dict_val
+            return new_dict
+        return self.__dict__
