@@ -2,14 +2,16 @@
 
 """
 This module contains a function that
-jsonify a string and write it to a json file
+deserialize a json file
 """
 import json
 
 
-def save_to_json_file(my_obj, filename):
+def load_from_json_file(filename):
     """ The function jsonifies my_obj and writes into
     filename
     """
-    with open(filename, "w") as f:
-        json.dump(my_obj, f)
+    obj = None
+    with open(filename, "r") as f:
+        obj = json.load(f)
+    return obj
