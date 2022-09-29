@@ -25,7 +25,7 @@ def stats():
             print(f"File size: {file_size}")
             for s in stat_codes:
                 if stats.get(s) is not None:
-                    print(f"{s}: {stats[s]:d}\n")
+                    print(f"{s}: {stats[s]:d}")
             i = 0
             continue
         split = line.split()
