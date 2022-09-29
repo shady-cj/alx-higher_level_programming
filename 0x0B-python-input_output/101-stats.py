@@ -26,7 +26,6 @@ def stats():
             for s in stat_codes:
                 if stats.get(s) is not None:
                     print(f"{s}: {stats[s]}\n")
-            stats = {}
             i = 0
             continue
         split = line.split()
