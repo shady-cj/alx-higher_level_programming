@@ -22,10 +22,10 @@ def stats():
     file_size = 0
     for line in sys.stdin:
         if i == 10:
-            print(f"File Size: {file_size}")
+            print(f"File size: {file_size}")
             for s in stat_codes:
                 if stats.get(s) is not None:
-                    print(f"{s}: {stats[s]}\n")
+                    print(f"{s}: {stats[s]:d}\n")
             i = 0
             continue
         split = line.split()
