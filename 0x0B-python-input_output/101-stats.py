@@ -26,7 +26,6 @@ def stats():
             for s in stat_codes:
                 if stats.get(s) is not None:
                     print(f"{s}: {stats[s]}\n")
-            file_size = 0
             stats = {}
             i = 0
             continue
