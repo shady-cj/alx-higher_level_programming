@@ -35,5 +35,6 @@ def stats():
         stats[code] = stats.get(code, 0) + 1
         i += 1
 
+
 if __name__ == "__main__":
     stats()
