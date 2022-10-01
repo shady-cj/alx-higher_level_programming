@@ -52,6 +52,7 @@ class Rectangle(Base):
         """
         Rectangle.validate(x, "x", "scale")
         self.__x = x
+
     @property
     def height(self):
         """
@@ -99,3 +100,13 @@ class Rectangle(Base):
         Calculating the area of the rectangle
         """
         return self.width * self.height
+
+    def display(self):
+        """
+        Printing out the rectangle with "#"
+        """
+
+        for _ in range(self.height):
+            for _ in range(self.width):
+                print("#", end="")
+            print()
