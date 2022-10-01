@@ -50,3 +50,11 @@ class RectangleTestCases(unittest.TestCase):
         """Testing for no arguments to Rectangle class"""
         self.assertRaises(TypeError, Rectangle)
 
+    def test_area(self):
+        """
+        Testing the area of the rectangle
+        """
+        self.assertEqual(self.r1.area(), 12)
+        self.assertEqual(Rectangle(4,4).area(), 16)
+        self.assertEqual(self.r2.area(), 24)
+        self.assertEqual(self.r3.area(), 60)
