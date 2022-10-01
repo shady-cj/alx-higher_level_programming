@@ -119,10 +119,11 @@ class Rectangle(Base):
         """
         overriding the __str__ method
         """
+        dim = f"{self.width}" if type(self).__name__ != "Rectangle" else f"\
+{self.width}/{self.height}"
+        return f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} \
+- {dim}"
 
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
-- {self.width}/{self.height}"
-    
     def update(self, *args, **kwargs):
         """
         Allowing updates on the class attributes
