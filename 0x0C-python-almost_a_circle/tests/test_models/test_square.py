@@ -64,6 +64,24 @@ class SquareTestCases(unittest.TestCase):
         self.assertTrue(str(self.s2) == "[Square] (5) 6/0 - 4")
         self.assertEqual(str(self.s3), "[Square] (10) 6/2 - 10")
 
+    def test_size_validation(self):
+        """
+        Testing the size attribute and making sure it is validate
+        """
+        self.assertTrue(self.s1.size == self.s1.width)
+        self.s1.size = 15
+        self.assertEqual(self.s1.size, 15)
+        self.assertEqual(self.s1.width, 15)
+        self.assertTrue(self.s1.width == self.s1.height)
+        with self.assertRaises(TypeError) as e:
+            self.s1.size = "4"
+
+        self.assertEqual(str(e.exception), "width must be an integer")
+        with self.assertRaises(ValueError) as m:
+            self.s1.size = 0
+
+        self.assertEqual(str(m.exception), "width must be > 0")
+
     """
     def test_update(self):
         ""

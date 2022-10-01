@@ -16,4 +16,24 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        The constructor... inheriting from the parent class
+        and also adding new attributes
+        """
         super().__init__(size, size, x, y, id)
+        self.size = size
+
+    def get_size(self):
+        """
+        defining getter on size attribute
+        """
+        return self.width
+
+    def set_size(self, s):
+        """
+        defining setter on size
+        """
+        self.width = s
+        self.height = s
+
+    size = property(get_size, set_size)
