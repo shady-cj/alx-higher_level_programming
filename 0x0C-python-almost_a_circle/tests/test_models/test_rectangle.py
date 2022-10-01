@@ -83,3 +83,19 @@ class RectangleTestCases(unittest.TestCase):
         self.assertEqual(str(self.r2), "[Rectangle] (1) 9/0 - 5/10")
         self.r2.update(1,5,10,9,8)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 9/8 - 5/10")
+
+    def test_update_with_kwargs(self):
+        """
+        Testing class update with keyword arguments
+        """
+
+        self.r2.update()
+        self.assertEqual(str(self.r2), "[Rectangle] (5) 0/0 - 4/6")
+        self.r2.update(1, height=10)
+        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 4/10")
+        self.r2.update(1, 7, 2, y=3)
+        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/3 - 7/2")
+        self.r2.update(width=3, y=8, height=2, id=12, x=17)
+        self.assertEqual(str(self.r2), "[Rectangle] (12) 17/8 - 3/2")
+        self.r2.update(2,4,id=20, width=10)
+        self.assertEqual(str(self.r2), "[Rectangle] (2) 17/8 - 4/2")

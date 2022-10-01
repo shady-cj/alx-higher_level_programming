@@ -123,20 +123,35 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
 - {self.width}/{self.height}"
     
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Allowing updates on the class attributes
         """
         i = 0
+        u_dict = {
+                "id": 0,
+                "width": 0,
+                "height": 0,
+                "x": 0,
+                "y": 0
+                }
         while i < len(args):
             if i == 0:
                 self.id = args[i]
+                u_dict["id"] += 1
             elif i == 1:
                 self.width = args[i]
+                u_dict["width"] += 1
             elif i == 2:
                 self.height = args[i]
+                u_dict["height"] += 1
             elif i == 3:
                 self.x = args[i]
+                u_dict["x"] += 1
             elif i == 4:
                 self.y = args[i]
+                u_dict["y"] += 1
             i += 1
+        for k, v in kwargs.items():
+            if u_dict[k] == 0:
+                setattr(self, k, v)
