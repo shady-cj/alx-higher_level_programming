@@ -65,3 +65,21 @@ class RectangleTestCases(unittest.TestCase):
         self.assertTrue(str(self.r2) == "[Rectangle] (5) 0/0 - 4/6")
         self.r3.id = 8
         self.assertEqual(str(self.r3), "[Rectangle] (8) 2/5 - 10/6")
+
+    def test_update(self):
+        """
+        Testing class Update
+        """
+
+        self.r2.update()
+        self.assertEqual(str(self.r2), "[Rectangle] (5) 0/0 - 4/6")
+        self.r2.update(1)
+        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 4/6")
+        self.r2.update(1, 5)
+        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 5/6")
+        self.r2.update(1,5,10)
+        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 5/10")
+        self.r2.update(1,5,10,9)
+        self.assertEqual(str(self.r2), "[Rectangle] (1) 9/0 - 5/10")
+        self.r2.update(1,5,10,9,8)
+        self.assertEqual(str(self.r2), "[Rectangle] (1) 9/8 - 5/10")
