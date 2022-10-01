@@ -35,6 +35,7 @@ class Rectangle(Base):
         """
         setter on width
         """
+        Rectangle.validate(w, "width", "dim")
         self.__width = w
 
     @property
@@ -49,8 +50,8 @@ class Rectangle(Base):
         """
         setter on x
         """
+        Rectangle.validate(x, "x", "scale")
         self.__x = x
-
     @property
     def height(self):
         """
@@ -63,6 +64,7 @@ class Rectangle(Base):
         """
         setter on height
         """
+        Rectangle.validate(h, "height", "dim")
         self.__height = h
 
     @property
@@ -77,4 +79,17 @@ class Rectangle(Base):
         """
         setter on y
         """
+        Rectangle.validate(y, "y", "scale")
         self.__y = y
+
+    @staticmethod
+    def validate(v, name, t):
+        """
+        Helper staticmethod to validate inputs
+        """
+        if type(v) != int:
+            raise TypeError(f"{name} must be an integer")
+        if t == "dim" and v <= 0:
+            raise ValueError(f"{name} must be > 0")
+        if t == "scale" and v < 0:
+            raise ValueError(f"{name} must be >= 0")
