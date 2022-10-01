@@ -10,9 +10,6 @@ class BaseClassTest(unittest.TestCase):
         self.base4 = Base()
         self.base5 = Base()
         self.base6 = Base(12)
-    @classmethod
-    def tearDownClass(self):
-        print("Ending BaseClassTest")
 
     def test_BaseClassIds(self):
         """
