@@ -663,3 +663,115 @@ False
 guillaume@ubuntu:~/$
 
 ```
+
+
+
+### 15. Dictionary to JSON string
+
+JSON is one of the standard formats for sharing data representation.
+
+Update the class `Base` by adding the static method `def to_json_string(list_dictionaries):` that returns the JSON string representation of `list_dictionaries`:
+
+* `list_dictionaries` is a list of dictionaries
+* If `list_dictionaries` is `None` or empty, return the string: `"[]"`
+* Otherwise, return the JSON string representation of `list_dictionaries`
+
+**Files** - models/base.py, 14-main.py
+
+
+```
+guillaume@ubuntu:~/$ cat 14-main.py
+#!/usr/bin/python3
+""" 14-main """
+from models.base import Base
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 7, 2, 8)
+    dictionary = r1.to_dictionary()
+    json_dictionary = Base.to_json_string([dictionary])
+    print(dictionary)
+    print(type(dictionary))
+    print(json_dictionary)
+    print(type(json_dictionary))
+
+guillaume@ubuntu:~/$ ./14-main.py
+{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
+<class 'dict'>
+[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]
+<class 'str'>
+guillaume@ubuntu:~/$ 
+```
+
+
+### 16. JSON string to file
+
+
+Update the class `Base` by adding the class method `def save_to_file(cls, list_objs):` that writes the JSON string representation of `list_objs` to a file:
+
+* `list_objs` is a list of instances who inherits of `Base` - example: list of `Rectangle` or list of `Square` instances
+* If `list_objs` is None, save an empty list
+* The filename must be: `<Class name>.json` - example: `Rectangle.json`
+* You must use the static method to_json_string (created before)
+* You must overwrite the file if it already exists
+
+
+**Files** - models/base.py, 15-main.py
+
+```
+guillaume@ubuntu:~/$ cat 15-main.py
+#!/usr/bin/python3
+""" 15-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 7, 2, 8)
+    r2 = Rectangle(2, 4)
+    Rectangle.save_to_file([r1, r2])
+
+    with open("Rectangle.json", "r") as file:
+        print(file.read())
+
+guillaume@ubuntu:~/$ ./15-main.py
+[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]
+guillaume@ubuntu:~/$
+```
+
+
+### 17. JSON string to dictionary
+
+Update the class `Base` by adding the static method `def from_json_string(json_string):` that returns the list of the JSON string representation `json_string:`
+
+* `json_string` is a string representing a `list of dictionaries`
+* If `json_string` is `None` or empty, return an empty `list`
+* Otherwise, return the `list` represented by `json_string`
+
+**Files** - models/base.py, 16-main.py
+
+
+```
+guillaume@ubuntu:~/$ cat 16-main.py
+#!/usr/bin/python3
+""" 16-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    list_input = [
+        {'id': 89, 'width': 10, 'height': 4}, 
+        {'id': 7, 'width': 1, 'height': 7}
+    ]
+    json_list_input = Rectangle.to_json_string(list_input)
+    list_output = Rectangle.from_json_string(json_list_input)
+    print("[{}] {}".format(type(list_input), list_input))
+    print("[{}] {}".format(type(json_list_input), json_list_input))
+    print("[{}] {}".format(type(list_output), list_output))
+
+guillaume@ubuntu:~/$ ./16-main.py
+[<class 'list'>] [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}]
+[<class 'str'>] [{"height": 4, "width": 10, "id": 89}, {"height": 7, "width": 1, "id": 7}]
+[<class 'list'>] [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}]
+guillaume@ubuntu:~/$ 
+```
