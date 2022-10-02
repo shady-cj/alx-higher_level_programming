@@ -37,3 +37,33 @@ class Square(Rectangle):
         self.height = s
 
     size = property(get_size, set_size)
+
+
+    def update(self, *args, **kwargs):
+        """
+        Allowing updates on the class attributes
+        """
+        i = 0
+        u_dict = {
+                "id": 0,
+                "size": 0,
+                "x": 0,
+                "y": 0
+                }
+        while i < len(args):
+            if i == 0:
+                self.id = args[i]
+                u_dict["id"] += 1
+            elif i == 1:
+                self.size = args[i]
+                u_dict["size"] += 1
+            elif i == 2:
+                self.x = args[i]
+                u_dict["x"] += 1
+            elif i == 3:
+                self.y = args[i]
+                u_dict["y"] += 1
+            i += 1
+        for k, v in kwargs.items():
+            if u_dict[k] == 0:
+                setattr(self, k, v)

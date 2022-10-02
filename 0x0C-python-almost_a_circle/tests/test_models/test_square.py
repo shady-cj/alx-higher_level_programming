@@ -82,38 +82,36 @@ class SquareTestCases(unittest.TestCase):
 
         self.assertEqual(str(m.exception), "width must be > 0")
 
-    """
     def test_update(self):
-        ""
+        """
         Testing class Update
-        ""
+        """
 
         self.s2.update()
-        self.assertEqual(str(self.r2), "[Rectangle] (5) 0/0 - 4/6")
+        self.assertEqual(str(self.s2), "[Square] (5) 6/0 - 4")
         self.s2.update(1)
-        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 4/6")
-        self.r2.update(1, 5)
-        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 5/6")
-        self.r2.update(1,5,10)
-        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 5/10")
-        self.r2.update(1,5,10,9)
-        self.assertEqual(str(self.r2), "[Rectangle] (1) 9/0 - 5/10")
-        self.r2.update(1,5,10,9,8)
-        self.assertEqual(str(self.r2), "[Rectangle] (1) 9/8 - 5/10")
+        self.assertEqual(str(self.s2), "[Square] (1) 6/0 - 4")
+        self.s2.update(1, 5)
+        self.assertEqual(str(self.s2), "[Square] (1) 6/0 - 5")
+        self.s2.update(1, 5, 10)
+        self.assertEqual(str(self.s2), "[Square] (1) 10/0 - 5")
+        self.s2.update(1,5,10,9)
+        self.assertEqual(str(self.s2), "[Square] (1) 10/9 - 5")
+        self.s2.update(1,5,10,9,8)
+        self.assertEqual(str(self.s2), "[Square] (1) 10/9 - 5")
 
     def test_update_with_kwargs(self):
-        ""
+        """
         Testing class update with keyword arguments
-        ""
+        """
 
-        self.r2.update()
-        self.assertEqual(str(self.r2), "[Rectangle] (5) 0/0 - 4/6")
-        self.r2.update(1, height=10)
-        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 4/10")
-        self.r2.update(1, 7, 2, y=3)
-        self.assertEqual(str(self.r2), "[Rectangle] (1) 0/3 - 7/2")
-        self.r2.update(width=3, y=8, height=2, id=12, x=17)
-        self.assertEqual(str(self.r2), "[Rectangle] (12) 17/8 - 3/2")
-        self.r2.update(2,4,id=20, width=10)
-        self.assertEqual(str(self.r2), "[Rectangle] (2) 17/8 - 4/2")
-    """
+        self.s2.update()
+        self.assertEqual(str(self.s2), "[Square] (5) 6/0 - 4")
+        self.s2.update(1, size=10)
+        self.assertEqual(str(self.s2), "[Square] (1) 6/0 - 10")
+        self.s2.update(1, 7, 2, y=3)
+        self.assertEqual(str(self.s2), "[Square] (1) 2/3 - 7")
+        self.s2.update(size=3, y=8, id=12, x=17)
+        self.assertEqual(str(self.s2), "[Square] (12) 17/8 - 3")
+        self.s2.update(2,4,id=20, size=10)
+        self.assertEqual(str(self.s2), "[Square] (2) 17/8 - 4")
