@@ -8,7 +8,6 @@ and inherits from the Rectangle class
 from .rectangle import Rectangle
 
 
-
 class Square(Rectangle):
     """
     Defining a Square class that inherits from
@@ -37,7 +36,6 @@ class Square(Rectangle):
         self.height = s
 
     size = property(get_size, set_size)
-
 
     def update(self, *args, **kwargs):
         """

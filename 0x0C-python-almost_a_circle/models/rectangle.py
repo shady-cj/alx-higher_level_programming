@@ -157,7 +157,6 @@ class Rectangle(Base):
             if u_dict[k] == 0:
                 setattr(self, k, v)
 
-
     def to_dictionary(self):
         """
         Converting the Rectangle instance to
