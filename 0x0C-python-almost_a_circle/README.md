@@ -775,3 +775,117 @@ guillaume@ubuntu:~/$ ./16-main.py
 [<class 'list'>] [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}]
 guillaume@ubuntu:~/$ 
 ```
+
+
+
+### 18. Dictionary to Instance
+
+Update the class `Base` by adding the class method `def create(cls, **dictionary):` that returns an `instance` with all attributes already set:
+
+* `**dictionary` can be thought of as a double pointer to a `dictionary`
+* To use the `update` method to assign all attributes, you must create a “dummy” instance before:
+	* Create a `Rectangle` or `Square` instance with “dummy” mandatory attributes (width, height, size, etc.)
+	* Call `update` instance method to this “dummy” instance to apply your real values
+* You must use the method `def update(self, *args, **kwargs)`
+* `**dictionary` must be used as `**kwargs` of the method update
+You are not allowed to use eval
+
+
+**Files** - models/base.py, 17-main.py
+
+```
+guillaume@ubuntu:~/$ cat 17-main.py
+#!/usr/bin/python3
+""" 17-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(3, 5, 1)
+    r1_dictionary = r1.to_dictionary()
+    r2 = Rectangle.create(**r1_dictionary)
+    print(r1)
+    print(r2)
+    print(r1 is r2)
+    print(r1 == r2)
+
+guillaume@ubuntu:~/$ ./17-main.py
+[Rectangle] (1) 1/0 - 3/5
+[Rectangle] (1) 1/0 - 3/5
+False
+False
+guillaume@ubuntu:~/$ 
+```
+
+
+### 19. File to instances
+
+Update the class `Base` by adding the class method `def load_from_file(cls):` that returns a list of instances:
+
+* The filename must be: `<Class name>.json` - example: `Rectangle.json`
+* If the file doesn’t exist, return an empty list
+* Otherwise, return a list of instances - the type of these instances depends on `cls` (current class using this method)
+You must use the `from_json_string` and create methods (implemented previously)
+
+
+**Files** - models/base.py, 18-main.py
+
+```
+guillaume@ubuntu:~/$ cat 18-main.py
+#!/usr/bin/python3
+""" 18-main """
+from models.rectangle import Rectangle
+from models.square import Square
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 7, 2, 8)
+    r2 = Rectangle(2, 4)
+    list_rectangles_input = [r1, r2]
+
+    Rectangle.save_to_file(list_rectangles_input)
+
+    list_rectangles_output = Rectangle.load_from_file()
+
+    for rect in list_rectangles_input:
+        print("[{}] {}".format(id(rect), rect))
+
+    print("---")
+
+    for rect in list_rectangles_output:
+        print("[{}] {}".format(id(rect), rect))
+
+    print("---")
+    print("---")
+
+    s1 = Square(5)
+    s2 = Square(7, 9, 1)
+    list_squares_input = [s1, s2]
+
+    Square.save_to_file(list_squares_input)
+
+    list_squares_output = Square.load_from_file()
+
+    for square in list_squares_input:
+        print("[{}] {}".format(id(square), square))
+
+    print("---")
+
+    for square in list_squares_output:
+        print("[{}] {}".format(id(square), square))
+
+guillaume@ubuntu:~/$ ./18-main.py
+[139785912033120] [Rectangle] (1) 2/8 - 10/7
+[139785912033176] [Rectangle] (2) 0/0 - 2/4
+---
+[139785911764752] [Rectangle] (1) 2/8 - 10/7
+[139785911764808] [Rectangle] (2) 0/0 - 2/4
+---
+---
+[139785912058040] [Square] (5) 0/0 - 5
+[139785912061848] [Square] (6) 9/1 - 7
+---
+[139785911764976] [Square] (5) 0/0 - 5
+[139785911765032] [Square] (6) 9/1 - 7
+guillaume@ubuntu:~/$ 
+```
