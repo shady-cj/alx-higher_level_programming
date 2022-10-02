@@ -99,3 +99,17 @@ class RectangleTestCases(unittest.TestCase):
         self.assertEqual(str(self.r2), "[Rectangle] (12) 17/8 - 3/2")
         self.r2.update(2,4,id=20, width=10)
         self.assertEqual(str(self.r2), "[Rectangle] (2) 17/8 - 4/2")
+
+    def test_to_dictionary_repr(self):
+        """
+        Testing the public method to_dictionary
+        """
+
+        self.assertIsInstance(self.r2.to_dictionary(), dict)
+        self.assertEqual(self.r2.to_dictionary()["width"], 4)
+
+        newRect = Rectangle(3, 5)
+        self.r2.update(**newRect.to_dictionary())
+        self.assertEqual(self.r2.width, 3)
+        self.assertEqual(self.r2.id, newRect.id)
+        self.assertTrue(self.r2.to_dictionary() == newRect.to_dictionary())

@@ -570,3 +570,96 @@ guillaume@ubuntu:~/$ ./11-main.py
 [Square] (89) 12/1 - 7
 guillaume@ubuntu:~/$
 ```
+
+
+
+### 13. Rectangle instance to dictionary representation
+
+Update the class `Rectangle` by adding the public method `def to_dictionary(self):` that returns the dictionary representation of a `Rectangle:`
+
+This dictionary must contain:
+
+* `id`
+* `width`
+* `height`
+* `x`
+* `y`
+
+**Files** - models/rectangle.py, 12-main.py
+
+```
+guillaume@ubuntu:~/$ cat 12-main.py
+#!/usr/bin/python3
+""" 12-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 2, 1, 9)
+    print(r1)
+    r1_dictionary = r1.to_dictionary()
+    print(r1_dictionary)
+    print(type(r1_dictionary))
+
+    r2 = Rectangle(1, 1)
+    print(r2)
+    r2.update(**r1_dictionary)
+    print(r2)
+    print(r1 == r2)
+
+guillaume@ubuntu:~/$ ./12-main.py
+[Rectangle] (1) 1/9 - 10/2
+{'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+<class 'dict'>
+[Rectangle] (2) 0/0 - 1/1
+[Rectangle] (1) 1/9 - 10/2
+False
+guillaume@ubuntu:~/$  
+```
+
+
+### 14. Square instance to dictionary representation
+
+Update the class `Square` by adding the public method `def to_dictionary(self):` that returns the dictionary representation of a `Square:`
+
+This dictionary must contain:
+
+* `id`
+* `size`
+* `x`
+* `y`
+
+
+**Files** - models/square.py, 13-main.py
+
+
+```
+guillaume@ubuntu:~/$ cat 13-main.py
+#!/usr/bin/python3
+""" 13-main """
+from models.square import Square
+
+if __name__ == "__main__":
+
+    s1 = Square(10, 2, 1)
+    print(s1)
+    s1_dictionary = s1.to_dictionary()
+    print(s1_dictionary)
+    print(type(s1_dictionary))
+
+    s2 = Square(1, 1)
+    print(s2)
+    s2.update(**s1_dictionary)
+    print(s2)
+    print(s1 == s2)
+
+guillaume@ubuntu:~/$ ./13-main.py
+[Square] (1) 2/1 - 10
+{'id': 1, 'x': 2, 'size': 10, 'y': 1}
+<class 'dict'>
+[Square] (2) 1/0 - 1
+[Square] (1) 2/1 - 10
+False
+guillaume@ubuntu:~/$
+
+```

@@ -156,3 +156,19 @@ class Rectangle(Base):
         for k, v in kwargs.items():
             if u_dict[k] == 0:
                 setattr(self, k, v)
+
+
+    def to_dictionary(self):
+        """
+        Converting the Rectangle instance to
+        dictionary
+        """
+        d = {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+            }
+
+        return d

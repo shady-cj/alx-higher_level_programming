@@ -115,3 +115,17 @@ class SquareTestCases(unittest.TestCase):
         self.assertEqual(str(self.s2), "[Square] (12) 17/8 - 3")
         self.s2.update(2,4,id=20, size=10)
         self.assertEqual(str(self.s2), "[Square] (2) 17/8 - 4")
+
+    def test_to_dictionary_repr(self):
+        """
+        Testing the public method to_dictionary
+        """
+
+        self.assertIsInstance(self.s2.to_dictionary(), dict)
+        self.assertEqual(self.s2.to_dictionary()["size"], 4)
+
+        newSq = Square(9)
+        self.s2.update(**newSq.to_dictionary())
+        self.assertEqual(self.s2.size, 9)
+        self.assertEqual(self.s2.id, newSq.id)
+        self.assertTrue(self.s2.to_dictionary() == newSq.to_dictionary())

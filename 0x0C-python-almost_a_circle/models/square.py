@@ -67,3 +67,14 @@ class Square(Rectangle):
         for k, v in kwargs.items():
             if u_dict[k] == 0:
                 setattr(self, k, v)
+
+    def to_dictionary(self):
+        """
+        Converting the square instance to
+        dictionary
+        """
+        d = super().to_dictionary()
+        d["size"] = self.size
+        d.pop("width")
+        d.pop("height")
+        return d
