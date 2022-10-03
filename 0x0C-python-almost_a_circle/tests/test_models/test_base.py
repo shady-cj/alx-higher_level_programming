@@ -69,8 +69,8 @@ class BaseClassTest(unittest.TestCase):
             ]
         for obj in list_objs:
             self.assertIsInstance(obj, Base)
-        Rectangle.save_to_file(list_objs)
-        Square.save_to_file(list_objs)
+        Rectangle.save_to_file(list_objs[:3])
+        Square.save_to_file(list_objs[3:])
         import os
         self.assertTrue(os.path.isfile("Rectangle.json"))
         self.assertTrue(os.path.isfile("Square.json"))
@@ -80,7 +80,7 @@ class BaseClassTest(unittest.TestCase):
             r_content = f.read()
             self.assertIsInstance(r_content, str)
             self.assertIsInstance(eval(r_content), list)
-            self.assertEqual(len(eval(r_content)), 6)
+            self.assertEqual(len(eval(r_content)), 3)
             for n in eval(r_content):
                 self.assertIsInstance(n, dict)
         with open("Square.json") as sf:
@@ -88,8 +88,6 @@ class BaseClassTest(unittest.TestCase):
             self.assertIsInstance(s_content, str)
             self.assertIsInstance(eval(s_content), list)
 
-        self.assertTrue(s_content == r_content)
-        self.assertEqual(s_content, r_content)
         output = [
                 rect1.to_dictionary(),
                 rect2.to_dictionary(),
@@ -98,7 +96,8 @@ class BaseClassTest(unittest.TestCase):
                 sq2.to_dictionary(),
                 sq3.to_dictionary()
             ]
-        self.assertEqual(eval(r_content), output)
+        self.assertEqual(eval(r_content), output[:3])
+        self.assertEqual(eval(s_content), output[3:])
 
     def test_from_json_string(self):
         """
