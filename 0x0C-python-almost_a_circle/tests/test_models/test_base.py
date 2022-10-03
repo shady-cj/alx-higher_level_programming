@@ -8,12 +8,12 @@ import os
 class BaseClassTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        self.base1 = Base()
-        self.base2 = Base()
-        self.base3 = Base(10)
-        self.base4 = Base()
-        self.base5 = Base()
-        self.base6 = Base(12)
+        cls.base1 = Base()
+        cls.base2 = Base()
+        cls.base3 = Base(10)
+        cls.base4 = Base()
+        cls.base5 = Base()
+        cls.base6 = Base(12)
 
     @classmethod
     def tearDownClass(cls):
