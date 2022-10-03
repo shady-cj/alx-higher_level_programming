@@ -166,9 +166,8 @@ class Base:
             t.forward(rect.height + spacing)
             t.left(90)
             t.pendown()
-       
-       t.setposition(max_width + spacing, 0)
-       for sq in list_squares:
+        t.setposition(max_width + spacing, 0)
+        for sq in list_squares:
             t.penup()
             t.forward(sq.x)
             t.right(90)
