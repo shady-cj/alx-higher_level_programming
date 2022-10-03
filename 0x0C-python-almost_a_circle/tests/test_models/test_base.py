@@ -2,17 +2,23 @@ import unittest
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
+import os
 
 
 class BaseClassTest(unittest.TestCase):
     @classmethod
-    def setUpClass(self):
+    def setUpClass(cls):
         self.base1 = Base()
         self.base2 = Base()
         self.base3 = Base(10)
         self.base4 = Base()
         self.base5 = Base()
         self.base6 = Base(12)
+
+    @classmethod
+    def tearDownClass(cls):
+        os.remove("Rectangle.json")
+        os.remove("Square.json")
 
     def test_BaseClassIds(self):
         """
