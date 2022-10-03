@@ -36,7 +36,7 @@ class BaseClassTest(unittest.TestCase):
         """
         self.assertEqual(self.base1.id, 1)
         self.assertEqual(self.base2.id, 2)
-        self.assertEqual(self.base3.id, 1)
+        self.assertEqual(self.base3.id, 10)
         b = Base(2)
         self.assertTrue(b.id == self.base2.id)
         b2 = Base()
@@ -169,7 +169,7 @@ class BaseClassTest(unittest.TestCase):
                 "x": 4,
                 "y": 2
                 }
-        self.assertRaises(TypeError, Base.create, **wrong_rect)
+        self.assertRaises(ValueError, Rectangle.create, **wrong_rect)
 
     def test_load_from_file(self):
         """
