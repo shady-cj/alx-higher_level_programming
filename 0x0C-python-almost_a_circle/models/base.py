@@ -66,7 +66,7 @@ class Base:
         with attributes listed in dictionary
         """
 
-        obj = cls(2, 4)
+        obj = cls(1, 1)
         obj.update(**dictionary)
         return obj
 
