@@ -66,7 +66,7 @@ class Base:
         with attributes listed in dictionary
         """
         if type(dictionary) == dict and len(dictionary):
-            if cls.__name__ = "Rectangle":
+            if cls.__name__ == "Rectangle":
                 obj = cls(1, 1)
             else:
                 obj = cls(1)
