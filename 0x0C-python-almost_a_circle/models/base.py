@@ -7,7 +7,7 @@ This module defines a base class
 
 import json
 import csv
-import turtle
+"""import turtle"""
 
 
 class Base:
@@ -139,7 +139,7 @@ class Base:
             instance.update(*obj)
             new_list_objs.append(instance)
         return new_list_objs
-
+    """
     @staticmethod
     def draw(list_rectangles, list_squares):
         t = turtle.Turtle()
@@ -188,3 +188,5 @@ class Base:
             t.left(90)
             t.pendown()
         t.done()
+
+        """
