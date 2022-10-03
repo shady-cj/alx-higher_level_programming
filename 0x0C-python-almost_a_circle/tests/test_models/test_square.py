@@ -129,3 +129,12 @@ class SquareTestCases(unittest.TestCase):
         self.assertEqual(self.s2.size, 9)
         self.assertEqual(self.s2.id, newSq.id)
         self.assertTrue(self.s2.to_dictionary() == newSq.to_dictionary())
+        output_dict = {
+                "size": self.s2.size,
+                "x": self.s2.x,
+                "y": self.s2.y,
+                "id": self.s2.id
+            }
+        self.assertEqual(self.s2.to_dictionary(), output_dict)
+        self.assertTrue(newSq.to_dictionary() == output_dict)  
+

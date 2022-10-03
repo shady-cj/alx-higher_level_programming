@@ -113,3 +113,12 @@ class RectangleTestCases(unittest.TestCase):
         self.assertEqual(self.r2.width, 3)
         self.assertEqual(self.r2.id, newRect.id)
         self.assertTrue(self.r2.to_dictionary() == newRect.to_dictionary())
+        output_dict = {
+                "width": self.r2.width,
+                "height": self.r2.height,
+                "x": self.r2.x,
+                "y": self.r2.y,
+                "id": self.r2.id
+            }
+        self.assertEqual(self.r2.to_dictionary(), output_dict)
+        self.assertTrue(newRect.to_dictionary() == output_dict)
