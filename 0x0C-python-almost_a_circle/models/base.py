@@ -5,7 +5,7 @@
 This module defines a base class
 """
 import json
-
+import csv
 
 class Base:
 
@@ -88,3 +88,51 @@ class Base:
             return list_of_instances
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        saving the list_objs into a csv file
+        """
+
+        filename = cls.__name__ + ".csv"
+        new_listobjs = []
+        for obj in list_objs:
+            obj_info = []
+            obj_dict = obj.to_dictionary()
+            obj_info.append(obj_dict.get("id"))
+            if obj_dict.get("size") != None:
+                obj_info.append(obj_dict.get("size"))
+            else:
+                obj_info.append(obj_dict.get("width"))
+                obj_info.append(obj_dict.get("height"))
+            obj_info.append(obj_dict.get("x"))
+            obj_info.append(obj_dict.get("y"))
+
+            new_listobjs.append(obj_info)
+
+        with open(filename, "w") as f:
+            writer = csv.writer(f)
+            for row in new_listobjs:
+                writer.writerow(row)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Loads from csv file and convert to list of instance
+        """
+
+        filename = cls.__name__ + ".csv"
+        list_objs = []
+        with open(filename) as f:
+            reader = csv.reader(f)
+
+            for row in reader:
+                list_objs.append(row)
+        new_list_objs = []
+        for obj in list_objs:
+            obj = list(map(int, obj))
+            instance = cls(1, 1)
+            instance.update(*obj)
+            new_list_objs.append(instance)
+        return new_list_objs
