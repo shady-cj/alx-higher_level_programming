@@ -65,8 +65,11 @@ class Base:
         It returns an instance of the corresponding class
         with attributes listed in dictionary
         """
-        if type(cls) != Base:
-            obj = cls(1, 1)
+        if type(dictionary) == dict and len(dictionary):
+            if cls.__name__ = "Rectangle":
+                obj = cls(1, 1)
+            else:
+                obj = cls(1)
             obj.update(**dictionary)
             return obj
 
