@@ -4,6 +4,7 @@
 """
 This module defines a base class
 """
+
 import json
 import csv
 import turtle
