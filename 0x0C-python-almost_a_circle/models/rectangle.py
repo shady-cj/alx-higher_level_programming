@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-from .base import Base
-
 """
 This module contains the Rectangle class
 that inherits from Base
 """
+from .base import Base
+
 
 
 class Rectangle(Base):
