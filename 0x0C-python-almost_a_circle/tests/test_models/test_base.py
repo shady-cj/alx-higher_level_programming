@@ -3,11 +3,18 @@ from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
 import os
+"""
+This module contains a class that runs test on all
+methods present in the Base class
+"""
 
 
 class BaseClassTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        """
+        Sets up the TestCases
+        """
         cls.base1 = Base()
         cls.base2 = Base()
         cls.base3 = Base(10)
@@ -17,6 +24,9 @@ class BaseClassTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        """
+        Cleans out after all tests
+        """
         os.remove("Rectangle.json")
         os.remove("Square.json")
 
@@ -26,11 +36,13 @@ class BaseClassTest(unittest.TestCase):
         """
         self.assertEqual(self.base1.id, 1)
         self.assertEqual(self.base2.id, 2)
-        self.assertEqual(self.base3.id, 10)
+        self.assertEqual(self.base3.id, 1)
         b = Base(2)
         self.assertTrue(b.id == self.base2.id)
         b2 = Base()
         self.assertEqual(b2.id, 5)
+        self.assertEqual({2, 3}, Base({2, 3}).id)
+        self.assertEqual("id", Base("id").id)
 
     def test_to_json_string_method(self):
         """

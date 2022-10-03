@@ -145,13 +145,18 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        import random
         t = turtle.Turtle()
         t.setposition(0, 0)
+        colors = ["red", "blue", "green", "yellow", "orange"]
         spacing = 20
         max_width = 0
         for rect in list_rectangles:
             if rect.width > max_width:
                 max_width = rect.width
+            t.color(random.choice())
+
+            t.begin_fill()
             t.penup()
             t.forward(rect.x)
             t.right(90)
@@ -170,8 +175,12 @@ class Base:
             t.forward(rect.height + spacing)
             t.left(90)
             t.pendown()
+            t.end_fill()
         t.setposition(max_width + spacing, 0)
         for sq in list_squares:
+            t.color(random.choice())
+
+            t.begin_fill()
             t.penup()
             t.forward(sq.x)
             t.right(90)
@@ -190,4 +199,5 @@ class Base:
             t.forward(sq.size + spacing)
             t.left(90)
             t.pendown()
+            t.end_fill()
         t.done()

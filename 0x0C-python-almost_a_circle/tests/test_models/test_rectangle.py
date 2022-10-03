@@ -1,10 +1,16 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+"""
+This module contains a class that inherits
+from unittest.TestCase anf runs tests on the
+Rectangle class
+"""
 
 
 class RectangleTestCases(unittest.TestCase):
     def setUp(self):
+        """Setup for every test"""
         self.r1 = Rectangle(3, 4)
         self.r2 = Rectangle(4, 6, id=5)
         self.b = Base()
