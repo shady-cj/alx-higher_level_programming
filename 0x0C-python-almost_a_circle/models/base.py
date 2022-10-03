@@ -65,10 +65,10 @@ class Base:
         It returns an instance of the corresponding class
         with attributes listed in dictionary
         """
-
-        obj = cls(1, 1)
-        obj.update(**dictionary)
-        return obj
+        if type(dictionary) == dict:
+            obj = cls(1, 1)
+            obj.update(**dictionary)
+            return obj
 
     @classmethod
     def load_from_file(cls):
