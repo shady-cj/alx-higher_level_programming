@@ -6,7 +6,6 @@ that inherits from Base
 from .base import Base
 
 
-
 class Rectangle(Base):
     """
     Defining the Rectangle class
