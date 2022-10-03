@@ -65,7 +65,7 @@ class Base:
         It returns an instance of the corresponding class
         with attributes listed in dictionary
         """
-        if type(dictionary) == dict:
+        if type(cls) != Base:
             obj = cls(1, 1)
             obj.update(**dictionary)
             return obj
