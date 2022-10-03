@@ -6,6 +6,8 @@ This module defines a base class
 """
 import json
 import csv
+import turtle
+
 
 class Base:
 
@@ -136,3 +138,53 @@ class Base:
             instance.update(*obj)
             new_list_objs.append(instance)
         return new_list_objs
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        t = turtle.Turtle()
+        t.setposition(0,0)
+        spacing = 20
+        max_width = 0
+        for rect in list_rectangles:
+            if rect.width > max_width:
+                max_width = rect.width
+            t.penup()
+            t.forward(rect.x)
+            t.right(90)
+            t.forward(rect.y)
+            t.left(90)
+            t.pendown()
+            t.forward(rect.width)
+            t.right(90)
+            t.forward(rect.height)
+            t.right(90)
+            t.forward(rect.width)
+            t.right(90)
+            t.forward(rect.height)
+            t.penup()
+            t.right(180)
+            t.forward(rect.height + spacing)
+            t.left(90)
+            t.pendown()
+       
+       t.setposition(max_width + spacing, 0)
+       for sq in list_squares:
+            t.penup()
+            t.forward(sq.x)
+            t.right(90)
+            t.forward(sq.y)
+            t.left(90)
+            t.pendown()
+            t.forward(sq.size)
+            t.right(90)
+            t.forward(sq.size)
+            t.right(90)
+            t.forward(sq.size)
+            t.right(90)
+            t.forward(sq.size)
+            t.penup()
+            t.right(180)
+            t.forward(sq.size + spacing)
+            t.left(90)
+            t.pendown()
+
