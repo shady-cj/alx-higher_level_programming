@@ -104,7 +104,7 @@ class Base:
             obj_info = []
             obj_dict = obj.to_dictionary()
             obj_info.append(obj_dict.get("id"))
-            if obj_dict.get("size") != None:
+            if obj_dict.get("size") is not None:
                 obj_info.append(obj_dict.get("size"))
             else:
                 obj_info.append(obj_dict.get("width"))
@@ -143,7 +143,7 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         t = turtle.Turtle()
-        t.setposition(0,0)
+        t.setposition(0, 0)
         spacing = 20
         max_width = 0
         for rect in list_rectangles:
@@ -187,4 +187,4 @@ class Base:
             t.forward(sq.size + spacing)
             t.left(90)
             t.pendown()
-
+        t.done()

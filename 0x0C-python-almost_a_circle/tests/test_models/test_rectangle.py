@@ -31,14 +31,14 @@ class RectangleTestCases(unittest.TestCase):
             newRect = Rectangle(5, (4,))
         self.assertTrue(str(e.exception) == "width must be an integer")
         self.assertRaises(TypeError, Rectangle, 2, 4, {4}, {4})
-    
+
     def test_valueValidation(self):
         """
         Testing the value validation of the arguments
         """
 
         with self.assertRaises(ValueError):
-            newRect = Rectangle(0,5)
+            newRect = Rectangle(0, 5)
 
         with self.assertRaises(ValueError) as e:
             newRect = Rectangle(4, -6)
@@ -54,7 +54,7 @@ class RectangleTestCases(unittest.TestCase):
         Testing the area of the rectangle
         """
         self.assertEqual(self.r1.area(), 12)
-        self.assertEqual(Rectangle(4,4).area(), 16)
+        self.assertEqual(Rectangle(4, 4).area(), 16)
         self.assertEqual(self.r2.area(), 24)
         self.assertEqual(self.r3.area(), 60)
 
@@ -77,11 +77,11 @@ class RectangleTestCases(unittest.TestCase):
         self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 4/6")
         self.r2.update(1, 5)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 5/6")
-        self.r2.update(1,5,10)
+        self.r2.update(1, 5, 10)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 5/10")
-        self.r2.update(1,5,10,9)
+        self.r2.update(1, 5, 10, 9)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 9/0 - 5/10")
-        self.r2.update(1,5,10,9,8)
+        self.r2.update(1, 5, 10, 9, 8)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 9/8 - 5/10")
 
     def test_update_with_kwargs(self):
@@ -97,7 +97,7 @@ class RectangleTestCases(unittest.TestCase):
         self.assertEqual(str(self.r2), "[Rectangle] (1) 0/3 - 7/2")
         self.r2.update(width=3, y=8, height=2, id=12, x=17)
         self.assertEqual(str(self.r2), "[Rectangle] (12) 17/8 - 3/2")
-        self.r2.update(2,4,id=20, width=10)
+        self.r2.update(2, 4, id=20, width=10)
         self.assertEqual(str(self.r2), "[Rectangle] (2) 17/8 - 4/2")
 
     def test_to_dictionary_repr(self):

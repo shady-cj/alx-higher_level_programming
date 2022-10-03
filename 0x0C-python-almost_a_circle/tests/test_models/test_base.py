@@ -31,9 +31,9 @@ class BaseClassTest(unittest.TestCase):
         Testing to_json_string() method with different
         edgecases
         """
-        rect1 = Rectangle(2,3)
-        rect2 = Rectangle(3,4,7,5,3)
-        rect3 = Rectangle(2,7,id=2)
+        rect1 = Rectangle(2, 3)
+        rect2 = Rectangle(3, 4, 7, 5, 3)
+        rect3 = Rectangle(2, 7, id=2)
 
         new_list = [
                 rect1.to_dictionary(),
@@ -49,14 +49,13 @@ class BaseClassTest(unittest.TestCase):
         self.assertIsInstance(Base.to_json_string(None), str)
         self.assertTrue(Base.to_json_string([]) == "[]")
 
-
     def test_save_to_file(self):
         """
         Testing save_to_file class method
         """
-        rect1 = Rectangle(2,3)
-        rect2 = Rectangle(3,4,7,5,3)
-        rect3 = Rectangle(2,7,id=2)
+        rect1 = Rectangle(2, 3)
+        rect2 = Rectangle(3, 4, 7, 5, 3)
+        rect3 = Rectangle(2, 7, id=2)
         sq1 = Square(3)
         sq2 = Square(4, 3, 6, 7)
         sq3 = Square(3, id=5)
@@ -101,15 +100,14 @@ class BaseClassTest(unittest.TestCase):
             ]
         self.assertEqual(eval(r_content), output)
 
-
     def test_from_json_string(self):
         """
         Testing from_json_string() static method with different
         edge scenarios
         """
-        rect1 = Rectangle(2,3)
-        rect2 = Rectangle(3,4,7,5,3)
-        rect3 = Rectangle(2,7,id=2)
+        rect1 = Rectangle(2, 3)
+        rect2 = Rectangle(3, 4, 7, 5, 3)
+        rect3 = Rectangle(2, 7, id=2)
         sq1 = Square(3)
         sq2 = Square(4, 3, 6, 7)
         sq3 = Square(3, id=5)
@@ -124,21 +122,18 @@ class BaseClassTest(unittest.TestCase):
 
         import json
         json_string = Base.to_json_string(list_of_dicts)
-        
         return_v = Base.from_json_string(json_string)
-
         self.assertEqual(return_v, list_of_dicts)
         self.assertIsInstance(return_v, list)
         self.assertIsNotNone(Base.from_json_string(None))
         self.assertIsInstance(Base.from_json_string(""), list)
-   
-    
+
     def test_create_method(self):
         """
         Testing the create() classmethod with edge cases
         """
 
-        rect = Rectangle(2,3)
+        rect = Rectangle(2, 3)
         sq = Square(3)
 
         new_rect = Rectangle.create(**rect.to_dictionary())
@@ -165,9 +160,9 @@ class BaseClassTest(unittest.TestCase):
         """
         self.assertEqual(Square.load_from_file(), [])
         self.assertEqual(Rectangle.load_from_file(), [])
-        rect1 = Rectangle(2,3)
-        rect2 = Rectangle(3,4,7,5,3)
-        rect3 = Rectangle(2,7,id=2)
+        rect1 = Rectangle(2, 3)
+        rect2 = Rectangle(3, 4, 7, 5, 3)
+        rect3 = Rectangle(2, 7, id=2)
         sq1 = Square(3)
         sq2 = Square(4, 3, 6, 7)
         sq3 = Square(3, id=5)
@@ -185,9 +180,8 @@ class BaseClassTest(unittest.TestCase):
         Square.save_to_file(list_obj_sq)
         s = Square.load_from_file()
         r = Rectangle.load_from_file()
-        
         self.assertNotEqual(s, list_obj_sq)
-        self.assertNotEqual(r, list_obj_rect) 
+        self.assertNotEqual(r, list_obj_rect)
         self.assertIsInstance(s, list)
         self.assertIsInstance(r, list)
         for obj_s in s:
@@ -214,6 +208,7 @@ class BaseClassTest(unittest.TestCase):
         self.assertNotEqual(new_s, s)
         self.assertEqual(len(new_s), 1)
         self.assertIsInstance(new_s, list)
+
 
 if __name__ == "__main__":
     unittest.main()

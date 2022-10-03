@@ -37,7 +37,7 @@ class SquareTestCases(unittest.TestCase):
         """
 
         with self.assertRaises(ValueError):
-            newSquare = Square(0,5)
+            newSquare = Square(0, 5)
 
         with self.assertRaises(ValueError) as e:
             newSquare = Square(4, -6)
@@ -53,7 +53,7 @@ class SquareTestCases(unittest.TestCase):
         Testing the area of the square
         """
         self.assertEqual(self.s1.area(), 9)
-        self.assertEqual(Square(4,5).area(), 16)
+        self.assertEqual(Square(4, 5).area(), 16)
         self.assertEqual(self.s2.area(), 16)
         self.assertEqual(self.s3.area(), 100)
 
@@ -95,9 +95,9 @@ class SquareTestCases(unittest.TestCase):
         self.assertEqual(str(self.s2), "[Square] (1) 6/0 - 5")
         self.s2.update(1, 5, 10)
         self.assertEqual(str(self.s2), "[Square] (1) 10/0 - 5")
-        self.s2.update(1,5,10,9)
+        self.s2.update(1, 5, 10, 9)
         self.assertEqual(str(self.s2), "[Square] (1) 10/9 - 5")
-        self.s2.update(1,5,10,9,8)
+        self.s2.update(1, 5, 10, 9, 8)
         self.assertEqual(str(self.s2), "[Square] (1) 10/9 - 5")
 
     def test_update_with_kwargs(self):
@@ -113,7 +113,7 @@ class SquareTestCases(unittest.TestCase):
         self.assertEqual(str(self.s2), "[Square] (1) 2/3 - 7")
         self.s2.update(size=3, y=8, id=12, x=17)
         self.assertEqual(str(self.s2), "[Square] (12) 17/8 - 3")
-        self.s2.update(2,4,id=20, size=10)
+        self.s2.update(2, 4, id=20, size=10)
         self.assertEqual(str(self.s2), "[Square] (2) 17/8 - 4")
 
     def test_to_dictionary_repr(self):
@@ -136,5 +136,4 @@ class SquareTestCases(unittest.TestCase):
                 "id": self.s2.id
             }
         self.assertEqual(self.s2.to_dictionary(), output_dict)
-        self.assertTrue(newSq.to_dictionary() == output_dict)  
-
+        self.assertTrue(newSq.to_dictionary() == output_dict)
