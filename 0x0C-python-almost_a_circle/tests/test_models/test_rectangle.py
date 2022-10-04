@@ -35,6 +35,10 @@ class RectangleTestCases(unittest.TestCase):
             newRect = Rectangle("3", 7)
         with self.assertRaises(TypeError):
             newRect = Rectangle(5, (4,))
+        with self.assertRaises(TypeError):
+            newRect = Rectangle(3, 9, "4")
+        with self.assertRaises(TypeError):
+            newRect = Rectangle(2, 7, 12, [2])
         self.assertTrue(str(e.exception) == "width must be an integer")
         self.assertRaises(TypeError, Rectangle, 2, 4, {4}, {4})
 
@@ -48,6 +52,12 @@ class RectangleTestCases(unittest.TestCase):
 
         with self.assertRaises(ValueError) as e:
             newRect = Rectangle(4, -6)
+        with self.assertRaises(ValueError):
+            newRect = Rectangle(2, 0)
+        with self.assertRaises(ValueError):
+            newRect = Rectangle(2, 10, -1)
+        with self.assertRaises(ValueError):
+            newRect = Rectangle(3, 12, 5, -7)
         self.assertEqual(str(e.exception), "height must be > 0")
         self.assertRaises(ValueError, Rectangle, 4, 6, -3)
 

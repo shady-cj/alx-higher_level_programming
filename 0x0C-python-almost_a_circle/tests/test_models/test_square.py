@@ -33,6 +33,9 @@ class SquareTestCases(unittest.TestCase):
         self.assertEqual(str(m.exception), "width must be an integer")
         with self.assertRaises(TypeError) as e:
             newSquare = Square(18, (4,), 7)
+        with self.assertRaises(TypeError):
+            newSquare = Square(2, 7, "2")
+
         self.assertTrue(str(e.exception) == "x must be an integer")
         self.assertRaises(TypeError, Square, 2, {4}, {4})
 
@@ -46,6 +49,8 @@ class SquareTestCases(unittest.TestCase):
 
         with self.assertRaises(ValueError) as e:
             newSquare = Square(4, -6)
+        with self.assertRaises(ValueError):
+            newSquare = Square(2, 10, -1)
         self.assertEqual(str(e.exception), "x must be >= 0")
         self.assertRaises(ValueError, Square, 4, 6, -3)
 
