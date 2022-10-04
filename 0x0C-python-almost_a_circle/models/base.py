@@ -130,11 +130,14 @@ class Base:
 
         filename = cls.__name__ + ".csv"
         list_objs = []
-        with open(filename) as f:
-            reader = csv.reader(f)
+        try:
+            with open(filename) as f:
+                reader = csv.reader(f)
 
-            for row in reader:
-                list_objs.append(row)
+                for row in reader:
+                    list_objs.append(row)
+        except FileNotFoundError:
+            return []
         new_list_objs = []
         for obj in list_objs:
             obj = list(map(int, obj))
@@ -145,6 +148,10 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """
+        This method provides the utility to draw the shapes using
+        turtle
+        """
         import random
         t = turtle.Turtle()
         t.setposition(0, 0)

@@ -226,6 +226,76 @@ class BaseClassTest(unittest.TestCase):
         self.assertEqual(len(new_s), 1)
         self.assertIsInstance(new_s, list)
 
+    def test_save_to_file_csv(self):
+        """
+        Testing saving to csv file method
+        """
+        rect_objs = [
+                Rectangle(2, 4),
+                Rectangle(5, 10, 2, 7),
+                Rectangle(3, 8, x=3)
+            ]
+        sq_objs = [
+                Square(3),
+                Square(6, 10, 8, 2),
+                Square(10, id=2)
+            ]
+        Rectangle.save_to_file_csv(rect_objs)
+        Square.save_to_file_csv(sq_objs)
+        self.assertTrue(os.path.isfile("Rectangle.csv"))
+        self.assertTrue(os.path.isfile("Square.csv"))
+        import csv
+
+        with open("Rectangle.csv") as f:
+            reader = csv.reader(f)
+            for index, row in enumerate(reader):
+                self.assertIsInstance(row, list)
+                self.assertEqual(row[0], rect_objs[index].id)
+                self.assertEqual(row[1], rect_objs[index].width)
+                self.assertEqual(row[2], rect_objs[index].height)
+                self.assertEqual(row[3], rect_objs[index].x)
+                self.assertEqual(row[4], rect_objs[index].y)
+
+        with open("Square.csv") as f:
+            reader = csv.reader(f)
+            for index, row in enumerate(reader):
+                self.assertIsInstance(row, list)
+                self.assertEqual(row[0], rect_objs[index].id)
+                self.assertEqual(row[1], rect_objs[index].size)
+                self.assertEqual(row[2], rect_objs[index].x)
+                self.assertEqual(row[3], rect_objs[index].y)
+        os.remove("Rectangle.csv")
+        os.remove("Square.csv")
+
+    def test_load_from_file_csv(self):
+        rect_objs = [
+                Rectangle(2, 4),
+                Rectangle(5, 10, 2, 7),
+                Rectangle(3, 8, x=3)
+            ]
+        sq_objs = [
+                Square(3),
+                Square(6, 10, 8, 2),
+                Square(10, id=2)
+            ]
+        Rectangle.save_to_file_csv(rect_objs)
+        Square.save_to_file_csv(sq_objs)
+
+        new_rects = Rectangle.load_from_file_csv()
+        new_sqs = Square.load_from_file_csv()
+        self.assertEqual(len(rect_objs), len(new_rects))
+
+        """ New objects are created so they can be the same """
+        self.assertNotEqual(rect_objs, new_rects)
+        self.assertEqual(len(sq_objs), len(new_sqs))
+        self.assertNotEqual(sq_objs, new_sqs)
+
+        for i in range(3):
+            self.assertEqual(rect_objs[i].to_dictionary(),
+                             new_rects[i].to_dictionary())
+            self.assertEqual(sq_objs[i].to_dictionary(),
+                             new_sqs[i].to_dictionary())
+
 
 if __name__ == "__main__":
     unittest.main()
