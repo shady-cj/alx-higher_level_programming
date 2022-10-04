@@ -250,24 +250,28 @@ class BaseClassTest(unittest.TestCase):
             reader = csv.reader(f)
             for index, row in enumerate(reader):
                 self.assertIsInstance(row, list)
-                self.assertEqual(row[0], rect_objs[index].id)
-                self.assertEqual(row[1], rect_objs[index].width)
-                self.assertEqual(row[2], rect_objs[index].height)
-                self.assertEqual(row[3], rect_objs[index].x)
-                self.assertEqual(row[4], rect_objs[index].y)
+                self.assertEqual(int(row[0]), rect_objs[index].id)
+                self.assertEqual(int(row[1]), rect_objs[index].width)
+                self.assertEqual(int(row[2]), rect_objs[index].height)
+                self.assertEqual(int(row[3]), rect_objs[index].x)
+                self.assertEqual(int(row[4]), rect_objs[index].y)
 
         with open("Square.csv") as f:
             reader = csv.reader(f)
             for index, row in enumerate(reader):
                 self.assertIsInstance(row, list)
-                self.assertEqual(row[0], rect_objs[index].id)
-                self.assertEqual(row[1], rect_objs[index].size)
-                self.assertEqual(row[2], rect_objs[index].x)
-                self.assertEqual(row[3], rect_objs[index].y)
+                self.assertEqual(int(row[0]), sq_objs[index].id)
+                self.assertEqual(int(row[1]), sq_objs[index].size)
+                self.assertEqual(int(row[2]), sq_objs[index].x)
+                self.assertEqual(int(row[3]), sq_objs[index].y)
         os.remove("Rectangle.csv")
         os.remove("Square.csv")
 
     def test_load_from_file_csv(self):
+        """
+        Testing loading instances from csv file
+        using the class method load_from_file_csv()
+        """
         rect_objs = [
                 Rectangle(2, 4),
                 Rectangle(5, 10, 2, 7),
