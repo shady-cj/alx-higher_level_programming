@@ -48,7 +48,8 @@ class SquareTestCases(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             newSquare = Square(0, 5)
-
+        with self.assertRaises(ValueError):
+            newSquare = Square(-1)
         with self.assertRaises(ValueError) as e:
             newSquare = Square(4, -6)
         with self.assertRaises(ValueError):
