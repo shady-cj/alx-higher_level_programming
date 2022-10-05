@@ -124,11 +124,13 @@ class BaseClassTest(unittest.TestCase):
         listRectangle = [Rectangle(3, 5)]
         Rectangle.save_to_file(listRectangle)
         Square.save_to_file(listSquare)
+        self.assertTrue(os.path.isfile("Rectangle.json"))
+        self.assertTrue(os.path.isfile("Square.json"))
         r_content = None
         s_content = None
         with open("Rectangle.json") as f:
             r_content = f.read()
-            self.assertIsInstance(r_content, str
+            self.assertIsInstance(r_content, str)
             self.assertIsInstance(eval(r_content), list)
             self.assertEqual(len(eval(r_content)), 3)
             for n in eval(r_content):
@@ -149,7 +151,7 @@ class BaseClassTest(unittest.TestCase):
         Square.save_to_file(None)
         Rectangle.save_to_file(None)
         self.assertTrue(os.path.isfile("Rectangle.json"))
-        self.assertTrue(os.path.isfile("Square.json")) 
+        self.assertTrue(os.path.isfile("Square.json"))
         with open("Rectangle.json") as f:
             self.assertEqual(f.read(), "[]")
         with open("Square.json") as f:
