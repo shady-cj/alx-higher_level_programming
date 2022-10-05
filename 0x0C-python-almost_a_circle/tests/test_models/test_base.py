@@ -89,7 +89,6 @@ class BaseClassTest(unittest.TestCase):
             self.assertIsInstance(obj, Base)
         Rectangle.save_to_file(list_objs[:3])
         Square.save_to_file(list_objs[3:])
-        import os
         self.assertTrue(os.path.isfile("Rectangle.json"))
         self.assertTrue(os.path.isfile("Square.json"))
         r_content = None
@@ -116,6 +115,32 @@ class BaseClassTest(unittest.TestCase):
             ]
         self.assertEqual(eval(r_content), output[:3])
         self.assertEqual(eval(s_content), output[3:])
+
+    def test_save_to_file_with_one_instance(self):
+        """
+        Testing save_to_file() with one arg
+        """
+        listSquare = [Square(3)]
+        listRectangle = [Rectangle(3, 5)]
+        Rectangle.save_to_file(listRectangle)
+        Square.save_to_file(listSquare)
+        r_content = None
+        s_content = None
+        with open("Rectangle.json") as f:
+            r_content = f.read()
+            self.assertIsInstance(r_content, str
+            self.assertIsInstance(eval(r_content), list)
+            self.assertEqual(len(eval(r_content)), 3)
+            for n in eval(r_content):
+                self.assertIsInstance(n, dict)
+                self.assertEqual(n, Rectangle(3, 5).to_dictionary())
+        with open("Square.json") as sf:
+            s_content = sf.read()
+            self.assertIsInstance(s_content, str)
+            self.assertIsInstance(eval(s_content), list)
+            for n in eval(s_content):
+                self.assertIsInstance(n, dict)
+                self.assertEqual(n, Square(3).to_dictionary())
 
     def test_save_to_file_with_None(self):
         """
