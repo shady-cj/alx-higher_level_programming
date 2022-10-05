@@ -74,6 +74,30 @@ class SquareTestCases(unittest.TestCase):
         self.assertTrue(str(self.s2) == "[Square] (5) 6/0 - 4")
         self.assertEqual(str(self.s3), "[Square] (10) 6/2 - 10")
 
+    def test_display_with_no_x_and_y(self):
+        """
+        Testing out the display method with x and y at 0
+        """
+        s1_display = "###\n###\n###\n"
+        string = io.StringIO()
+        sys.stdout = string
+        self.s1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(string.getvalue(), s1_display)
+
+    def test_display_with_x_and_y(self):
+        """
+        Testing out the display method with x and y at values
+        other than 0
+        """
+        newSq = Square(2, 2, 3)
+        s_display = "\n\n\n  ##\n  ##\n"
+        string = io.StringIO()
+        sys.stdout = string
+        newSq.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(string.getvalue(), s_display)
+
     def test_size_validation(self):
         """
         Testing the size attribute and making sure it is validate

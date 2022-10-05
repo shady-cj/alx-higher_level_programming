@@ -82,6 +82,30 @@ class RectangleTestCases(unittest.TestCase):
         self.r3.id = 8
         self.assertEqual(str(self.r3), "[Rectangle] (8) 2/5 - 10/6")
 
+    def test_display_with_no_x_and_y(self):
+        """
+        Testing out the display method with x and y at 0
+        """
+        r1_display = "###\n###\n###\n###\n"
+        string = io.StringIO()
+        sys.stdout = string
+        self.r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(string.getvalue(), r1_display)
+
+    def test_display_with_x_and_y(self):
+        """
+        Testing out the display method with x and y at values
+        other than 0
+        """
+        newRect = Rectangle(2, 4, 2, 3)
+        r_display = "\n\n\n  ##\n  ##\n  ##\n  ##\n"
+        string = io.StringIO()
+        sys.stdout = string
+        newRect.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(string.getvalue(), r_display)
+
     def test_update(self):
         """
         Testing class Update
