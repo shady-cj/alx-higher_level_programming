@@ -123,6 +123,8 @@ class BaseClassTest(unittest.TestCase):
         """
         Square.save_to_file(None)
         Rectangle.save_to_file(None)
+        self.assertTrue(os.path.isfile("Rectangle.json"))
+        self.assertTrue(os.path.isfile("Square.json")) 
         with open("Rectangle.json") as f:
             self.assertEqual(f.read(), "[]")
         with open("Square.json") as f:
@@ -134,6 +136,8 @@ class BaseClassTest(unittest.TestCase):
         """
         Square.save_to_file([])
         Rectangle.save_to_file([])
+        self.assertTrue(os.path.isfile("Rectangle.json"))
+        self.assertTrue(os.path.isfile("Square.json"))
         with open("Rectangle.json") as f:
             self.assertEqual(f.read(), "[]")
             self.assertIsInstance(f.read(), str)
