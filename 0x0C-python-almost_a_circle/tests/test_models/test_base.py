@@ -77,18 +77,20 @@ class BaseClassTest(unittest.TestCase):
         sq1 = Square(3)
         sq2 = Square(4, 3, 6, 7)
         sq3 = Square(3, id=5)
-        list_objs = [
+        list_obj_rect = [
                 rect1,
                 rect2,
-                rect3,
+                rect3
+            ]
+        list_obj_sq = [
                 sq1,
                 sq2,
                 sq3
             ]
         for obj in list_objs:
             self.assertIsInstance(obj, Base)
-        Rectangle.save_to_file(list_objs[:3])
-        Square.save_to_file(list_objs[3:])
+        Rectangle.save_to_file(list_obj_rect)
+        Square.save_to_file(list_obj_sq)
         self.assertTrue(os.path.isfile("Rectangle.json"))
         self.assertTrue(os.path.isfile("Square.json"))
         r_content = None
