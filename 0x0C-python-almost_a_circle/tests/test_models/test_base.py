@@ -116,12 +116,22 @@ class BaseClassTest(unittest.TestCase):
             ]
         self.assertEqual(eval(r_content), output[:3])
         self.assertEqual(eval(s_content), output[3:])
+
+    def test_save_to_file_with_None(self):
+        """
+        Testing the save_to_file() value with None as argument
+        """
         Square.save_to_file(None)
         Rectangle.save_to_file(None)
         with open("Rectangle.json") as f:
             self.assertEqual(f.read(), "[]")
         with open("Square.json") as f:
             self.assertEqual(f.read(), "[]")
+
+    def test_save_to_file_with_empty_list(self):
+        """
+        Testing the save_to_file() with [] as argument
+        """
         Square.save_to_file([])
         Rectangle.save_to_file([])
         with open("Rectangle.json") as f:
