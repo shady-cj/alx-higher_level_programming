@@ -139,7 +139,7 @@ class BaseClassTest(unittest.TestCase):
             self.assertIsInstance(f.read(), str)
         with open("Square.json") as sf:
             self.assertEqual(sf.read(), "[]")
-            self.assertIsInstance(f.read(), str)
+            self.assertIsInstance(sf.read(), str)
 
     def test_from_json_string(self):
         """
