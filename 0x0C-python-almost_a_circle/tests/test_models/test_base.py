@@ -132,17 +132,24 @@ class BaseClassTest(unittest.TestCase):
             r_content = f.read()
             self.assertIsInstance(r_content, str)
             self.assertIsInstance(eval(r_content), list)
-            self.assertEqual(len(eval(r_content)), 3)
             for n in eval(r_content):
                 self.assertIsInstance(n, dict)
-                self.assertEqual(n, Rectangle(3, 5).to_dictionary())
+                rc = dict(Rectangle(3, 5).to_dictionary())
+                nc = dict(n)
+                rc.pop("id")
+                nc.pop("id")
+                self.assertEqual(nc, rc)
         with open("Square.json") as sf:
             s_content = sf.read()
             self.assertIsInstance(s_content, str)
             self.assertIsInstance(eval(s_content), list)
             for n in eval(s_content):
                 self.assertIsInstance(n, dict)
-                self.assertEqual(n, Square(3).to_dictionary())
+                sc = dict(Square(3).to_dictionary())
+                nc = dict(n)
+                sc.pop("id")
+                nc.pop("id")
+                self.assertEqual(nc, sc)
 
     def test_save_to_file_with_None(self):
         """
