@@ -1,10 +1,12 @@
-import unittest
-from models.square import Square
 """
 This module contains a class that inherits from
 unittest.TestCase that runs tests on the Square
 class considering different edge cases
 """
+import sys
+import io
+import unittest
+from models.square import Square
 
 
 class SquareTestCases(unittest.TestCase):

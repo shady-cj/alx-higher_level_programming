@@ -1,11 +1,13 @@
-import unittest
-from models.rectangle import Rectangle
-from models.base import Base
 """
 This module contains a class that inherits
 from unittest.TestCase anf runs tests on the
 Rectangle class
 """
+import unittest
+from models.rectangle import Rectangle
+from models.base import Base
+import sys
+import io
 
 
 class RectangleTestCases(unittest.TestCase):

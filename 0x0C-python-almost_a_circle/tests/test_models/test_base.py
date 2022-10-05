@@ -1,12 +1,12 @@
+"""
+This module contains a class that runs test on all
+methods present in the Base class
+"""
 import unittest
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
 import os
-"""
-This module contains a class that runs test on all
-methods present in the Base class
-"""
 
 
 class BaseClassTest(unittest.TestCase):
