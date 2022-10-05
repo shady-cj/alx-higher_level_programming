@@ -120,10 +120,8 @@ class BaseClassTest(unittest.TestCase):
         """
         Testing save_to_file() with one arg
         """
-        listSquare = [Square(3)]
-        listRectangle = [Rectangle(3, 5)]
-        Rectangle.save_to_file(listRectangle)
-        Square.save_to_file(listSquare)
+        Rectangle.save_to_file([Rectangle(3, 5)])
+        Square.save_to_file([Square(3)])
         self.assertTrue(os.path.isfile("Rectangle.json"))
         self.assertTrue(os.path.isfile("Square.json"))
         r_content = None
