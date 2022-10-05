@@ -116,6 +116,18 @@ class BaseClassTest(unittest.TestCase):
             ]
         self.assertEqual(eval(r_content), output[:3])
         self.assertEqual(eval(s_content), output[3:])
+        Square.save_to_file(None)
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json") as f:
+            self.assertEqual(f.read(), "[]")
+        with open("Square.json") as f:
+            self.assertEqual(f.read(), "[]")
+        Square.save_to_file([])
+        Rectangle.save_to_file([])
+        with open("Rectangle.json") as f:
+            self.assertEqual(f.read(), "[]")
+        with open("Square.json") as f:
+            self.assertEqual(f.read(), "[]")
 
     def test_from_json_string(self):
         """
