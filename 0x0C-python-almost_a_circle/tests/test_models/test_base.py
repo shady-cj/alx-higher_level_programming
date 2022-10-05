@@ -136,8 +136,10 @@ class BaseClassTest(unittest.TestCase):
         Rectangle.save_to_file([])
         with open("Rectangle.json") as f:
             self.assertEqual(f.read(), "[]")
+            self.assertIsInstance(f.read(), str)
         with open("Square.json") as sf:
             self.assertEqual(sf.read(), "[]")
+            self.assertIsInstance(f.read(), str)
 
     def test_from_json_string(self):
         """
