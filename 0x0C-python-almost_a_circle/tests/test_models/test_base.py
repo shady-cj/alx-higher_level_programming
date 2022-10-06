@@ -87,8 +87,6 @@ class BaseClassTest(unittest.TestCase):
                 sq2,
                 sq3
             ]
-        for obj in list_objs:
-            self.assertIsInstance(obj, Base)
         Rectangle.save_to_file(list_obj_rect)
         Square.save_to_file(list_obj_sq)
         self.assertTrue(os.path.isfile("Rectangle.json"))
