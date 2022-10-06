@@ -122,8 +122,8 @@ class BaseClassTest(unittest.TestCase):
         """
         Testing save_to_file() with one arg
         """
-        Rectangle.save_to_file([Rectangle(3, 5)])
-        Square.save_to_file([Square(3)])
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        Square.save_to_file([Square(1)])
         self.assertTrue(os.path.isfile("Rectangle.json"))
         self.assertTrue(os.path.isfile("Square.json"))
         r_content = None
@@ -134,7 +134,7 @@ class BaseClassTest(unittest.TestCase):
             self.assertIsInstance(eval(r_content), list)
             for n in eval(r_content):
                 self.assertIsInstance(n, dict)
-                rc = dict(Rectangle(3, 5).to_dictionary())
+                rc = dict(Rectangle(1, 2).to_dictionary())
                 nc = dict(n)
                 rc.pop("id")
                 nc.pop("id")
@@ -145,7 +145,7 @@ class BaseClassTest(unittest.TestCase):
             self.assertIsInstance(eval(s_content), list)
             for n in eval(s_content):
                 self.assertIsInstance(n, dict)
-                sc = dict(Square(3).to_dictionary())
+                sc = dict(Square(1).to_dictionary())
                 nc = dict(n)
                 sc.pop("id")
                 nc.pop("id")
