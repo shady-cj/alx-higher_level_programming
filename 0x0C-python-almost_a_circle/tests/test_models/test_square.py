@@ -1,3 +1,10 @@
+"""
+This module contains a class that inherits from
+unittest.TestCase that runs tests on the Square
+class considering different edge cases
+"""
+import sys
+import io
 import unittest
 from models.square import Square
 
@@ -28,6 +35,9 @@ class SquareTestCases(unittest.TestCase):
         self.assertEqual(str(m.exception), "width must be an integer")
         with self.assertRaises(TypeError) as e:
             newSquare = Square(18, (4,), 7)
+        with self.assertRaises(TypeError):
+            newSquare = Square(2, 7, "2")
+
         self.assertTrue(str(e.exception) == "x must be an integer")
         self.assertRaises(TypeError, Square, 2, {4}, {4})
 
@@ -37,10 +47,13 @@ class SquareTestCases(unittest.TestCase):
         """
 
         with self.assertRaises(ValueError):
-            newSquare = Square(0,5)
-
+            newSquare = Square(0, 5)
+        with self.assertRaises(ValueError):
+            newSquare = Square(-1)
         with self.assertRaises(ValueError) as e:
             newSquare = Square(4, -6)
+        with self.assertRaises(ValueError):
+            newSquare = Square(2, 10, -1)
         self.assertEqual(str(e.exception), "x must be >= 0")
         self.assertRaises(ValueError, Square, 4, 6, -3)
 
@@ -53,7 +66,7 @@ class SquareTestCases(unittest.TestCase):
         Testing the area of the square
         """
         self.assertEqual(self.s1.area(), 9)
-        self.assertEqual(Square(4,5).area(), 16)
+        self.assertEqual(Square(4, 5).area(), 16)
         self.assertEqual(self.s2.area(), 16)
         self.assertEqual(self.s3.area(), 100)
 
@@ -63,6 +76,30 @@ class SquareTestCases(unittest.TestCase):
         """
         self.assertTrue(str(self.s2) == "[Square] (5) 6/0 - 4")
         self.assertEqual(str(self.s3), "[Square] (10) 6/2 - 10")
+
+    def test_display_with_no_x_and_y(self):
+        """
+        Testing out the display method with x and y at 0
+        """
+        s1_display = "###\n###\n###\n"
+        string = io.StringIO()
+        sys.stdout = string
+        self.s1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(string.getvalue(), s1_display)
+
+    def test_display_with_x_and_y(self):
+        """
+        Testing out the display method with x and y at values
+        other than 0
+        """
+        newSq = Square(2, 2, 3)
+        s_display = "\n\n\n  ##\n  ##\n"
+        string = io.StringIO()
+        sys.stdout = string
+        newSq.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(string.getvalue(), s_display)
 
     def test_size_validation(self):
         """
@@ -95,9 +132,9 @@ class SquareTestCases(unittest.TestCase):
         self.assertEqual(str(self.s2), "[Square] (1) 6/0 - 5")
         self.s2.update(1, 5, 10)
         self.assertEqual(str(self.s2), "[Square] (1) 10/0 - 5")
-        self.s2.update(1,5,10,9)
+        self.s2.update(1, 5, 10, 9)
         self.assertEqual(str(self.s2), "[Square] (1) 10/9 - 5")
-        self.s2.update(1,5,10,9,8)
+        self.s2.update(1, 5, 10, 9, 8)
         self.assertEqual(str(self.s2), "[Square] (1) 10/9 - 5")
 
     def test_update_with_kwargs(self):
@@ -113,7 +150,7 @@ class SquareTestCases(unittest.TestCase):
         self.assertEqual(str(self.s2), "[Square] (1) 2/3 - 7")
         self.s2.update(size=3, y=8, id=12, x=17)
         self.assertEqual(str(self.s2), "[Square] (12) 17/8 - 3")
-        self.s2.update(2,4,id=20, size=10)
+        self.s2.update(2, 4, id=20, size=10)
         self.assertEqual(str(self.s2), "[Square] (2) 17/8 - 4")
 
     def test_to_dictionary_repr(self):
@@ -136,5 +173,4 @@ class SquareTestCases(unittest.TestCase):
                 "id": self.s2.id
             }
         self.assertEqual(self.s2.to_dictionary(), output_dict)
-        self.assertTrue(newSq.to_dictionary() == output_dict)  
-
+        self.assertTrue(newSq.to_dictionary() == output_dict)

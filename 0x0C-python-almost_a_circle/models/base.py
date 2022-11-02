@@ -65,10 +65,13 @@ class Base:
         It returns an instance of the corresponding class
         with attributes listed in dictionary
         """
-
-        obj = cls(2, 4)
-        obj.update(**dictionary)
-        return obj
+        if type(dictionary) == dict and len(dictionary):
+            if cls.__name__ == "Rectangle":
+                obj = cls(1, 1)
+            else:
+                obj = cls(1)
+            obj.update(**dictionary)
+            return obj
 
     @classmethod
     def load_from_file(cls):
@@ -104,7 +107,7 @@ class Base:
             obj_info = []
             obj_dict = obj.to_dictionary()
             obj_info.append(obj_dict.get("id"))
-            if obj_dict.get("size") != None:
+            if obj_dict.get("size") is not None:
                 obj_info.append(obj_dict.get("size"))
             else:
                 obj_info.append(obj_dict.get("width"))
@@ -127,11 +130,14 @@ class Base:
 
         filename = cls.__name__ + ".csv"
         list_objs = []
-        with open(filename) as f:
-            reader = csv.reader(f)
+        try:
+            with open(filename) as f:
+                reader = csv.reader(f)
 
-            for row in reader:
-                list_objs.append(row)
+                for row in reader:
+                    list_objs.append(row)
+        except FileNotFoundError:
+            return []
         new_list_objs = []
         for obj in list_objs:
             obj = list(map(int, obj))
@@ -142,13 +148,22 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """
+        This method provides the utility to draw the shapes using
+        turtle
+        """
+        import random
         t = turtle.Turtle()
-        t.setposition(0,0)
+        t.setposition(0, 0)
+        colors = ["red", "blue", "green", "yellow", "orange"]
         spacing = 20
         max_width = 0
         for rect in list_rectangles:
             if rect.width > max_width:
                 max_width = rect.width
+            t.color(random.choice())
+
+            t.begin_fill()
             t.penup()
             t.forward(rect.x)
             t.right(90)
@@ -167,8 +182,12 @@ class Base:
             t.forward(rect.height + spacing)
             t.left(90)
             t.pendown()
+            t.end_fill()
         t.setposition(max_width + spacing, 0)
         for sq in list_squares:
+            t.color(random.choice())
+
+            t.begin_fill()
             t.penup()
             t.forward(sq.x)
             t.right(90)
@@ -187,4 +206,5 @@ class Base:
             t.forward(sq.size + spacing)
             t.left(90)
             t.pendown()
-
+            t.end_fill()
+        t.done()

@@ -1,10 +1,18 @@
+"""
+This module contains a class that inherits
+from unittest.TestCase anf runs tests on the
+Rectangle class
+"""
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+import sys
+import io
 
 
 class RectangleTestCases(unittest.TestCase):
     def setUp(self):
+        """Setup for every test"""
         self.r1 = Rectangle(3, 4)
         self.r2 = Rectangle(4, 6, id=5)
         self.b = Base()
@@ -29,19 +37,29 @@ class RectangleTestCases(unittest.TestCase):
             newRect = Rectangle("3", 7)
         with self.assertRaises(TypeError):
             newRect = Rectangle(5, (4,))
+        with self.assertRaises(TypeError):
+            newRect = Rectangle(3, 9, "4")
+        with self.assertRaises(TypeError):
+            newRect = Rectangle(2, 7, 12, [2])
         self.assertTrue(str(e.exception) == "width must be an integer")
         self.assertRaises(TypeError, Rectangle, 2, 4, {4}, {4})
-    
+
     def test_valueValidation(self):
         """
         Testing the value validation of the arguments
         """
 
         with self.assertRaises(ValueError):
-            newRect = Rectangle(0,5)
+            newRect = Rectangle(0, 5)
 
         with self.assertRaises(ValueError) as e:
             newRect = Rectangle(4, -6)
+        with self.assertRaises(ValueError):
+            newRect = Rectangle(2, 0)
+        with self.assertRaises(ValueError):
+            newRect = Rectangle(2, 10, -1)
+        with self.assertRaises(ValueError):
+            newRect = Rectangle(3, 12, 5, -7)
         self.assertEqual(str(e.exception), "height must be > 0")
         self.assertRaises(ValueError, Rectangle, 4, 6, -3)
 
@@ -54,7 +72,7 @@ class RectangleTestCases(unittest.TestCase):
         Testing the area of the rectangle
         """
         self.assertEqual(self.r1.area(), 12)
-        self.assertEqual(Rectangle(4,4).area(), 16)
+        self.assertEqual(Rectangle(4, 4).area(), 16)
         self.assertEqual(self.r2.area(), 24)
         self.assertEqual(self.r3.area(), 60)
 
@@ -65,6 +83,30 @@ class RectangleTestCases(unittest.TestCase):
         self.assertTrue(str(self.r2) == "[Rectangle] (5) 0/0 - 4/6")
         self.r3.id = 8
         self.assertEqual(str(self.r3), "[Rectangle] (8) 2/5 - 10/6")
+
+    def test_display_with_no_x_and_y(self):
+        """
+        Testing out the display method with x and y at 0
+        """
+        r1_display = "###\n###\n###\n###\n"
+        string = io.StringIO()
+        sys.stdout = string
+        self.r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(string.getvalue(), r1_display)
+
+    def test_display_with_x_and_y(self):
+        """
+        Testing out the display method with x and y at values
+        other than 0
+        """
+        newRect = Rectangle(2, 4, 2, 3)
+        r_display = "\n\n\n  ##\n  ##\n  ##\n  ##\n"
+        string = io.StringIO()
+        sys.stdout = string
+        newRect.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(string.getvalue(), r_display)
 
     def test_update(self):
         """
@@ -77,11 +119,11 @@ class RectangleTestCases(unittest.TestCase):
         self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 4/6")
         self.r2.update(1, 5)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 5/6")
-        self.r2.update(1,5,10)
+        self.r2.update(1, 5, 10)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 0/0 - 5/10")
-        self.r2.update(1,5,10,9)
+        self.r2.update(1, 5, 10, 9)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 9/0 - 5/10")
-        self.r2.update(1,5,10,9,8)
+        self.r2.update(1, 5, 10, 9, 8)
         self.assertEqual(str(self.r2), "[Rectangle] (1) 9/8 - 5/10")
 
     def test_update_with_kwargs(self):
@@ -97,7 +139,7 @@ class RectangleTestCases(unittest.TestCase):
         self.assertEqual(str(self.r2), "[Rectangle] (1) 0/3 - 7/2")
         self.r2.update(width=3, y=8, height=2, id=12, x=17)
         self.assertEqual(str(self.r2), "[Rectangle] (12) 17/8 - 3/2")
-        self.r2.update(2,4,id=20, width=10)
+        self.r2.update(2, 4, id=20, width=10)
         self.assertEqual(str(self.r2), "[Rectangle] (2) 17/8 - 4/2")
 
     def test_to_dictionary_repr(self):
