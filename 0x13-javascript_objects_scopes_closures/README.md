@@ -1,0 +1,3 @@
+# 0x13-javascript_objects_scopes_closures
+
+Learning more about object oriented programming in javascript, visiting concepts like closures, prototyping etc...
