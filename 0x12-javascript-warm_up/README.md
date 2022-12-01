@@ -381,3 +381,24 @@ guillaume@ubuntu:~/0x12$ ./13-main.js
 8
 guillaume@ubuntu:~/0x12$ 
 ```
+
+
+
+
+### 14. Const or not const
+
+Write a file that modifies the value of myVar to 333
+
+
+**Files** - 100-main.js, 100-let_me_const
+
+```
+guillaume@ubuntu:~/0x12$ cat 100-main.js
+#!/usr/bin/node
+myVar = 89;
+require('./100-let_me_const')
+console.log(myVar);
+guillaume@ubuntu:~/0x12$ ./100-main.js
+333
+guillaume@ubuntu:~/0x12$ 
+```
