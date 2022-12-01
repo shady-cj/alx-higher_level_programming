@@ -10,8 +10,10 @@ if (args.length <= 3) {
   let secondLargest = null;
   for (const el of slicedList) {
     if (largest === null || parseInt(el) > largest) {
-      secondLargest = parseInt(largest);
+      secondLargest = largest;
       largest = parseInt(el);
+    } else if (parseInt(el) > secondLargest) {
+      secondLargest = parseInt(el);
     }
   }
   console.log(secondLargest);
