@@ -18,7 +18,7 @@ def main(username, password, db_name, keyword):
                          passwd=password, port=3306)
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE states.name='{}' \
-ORDER BY states.id ASC".format(keyword))
+ORDER BY states.id ASC".format(str(keyword)))
     for entry in cursor.fetchall():
         print(entry)
     cursor.close()
