@@ -21,7 +21,8 @@ if __name__ == "__main__":
     # q = session.query(State.name, City.id, City.name)\
     #     .filter(City.state_id == State.id)\
     #     .order_by(City.id).all()
-    q = session.query(City).join(State).order_by(City.id).all()
-    print(q)
+    q = session.query(State, City).join(State).order_by(City.id).all()
+    for state, city in q:
+        print(f"{state.name}: ({city.id}) {city.name}")
     # for state_name, city_id, city_name in q:
     #     print(f"{state_name}: ({city_id}) {city_name}")
