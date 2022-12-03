@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Issueing a query to fetch the first data from a given database
+Issueing a query to fetch the data thats starts with 'a' from a given database
 """
 
 from model_state import Base, State
@@ -16,6 +16,5 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker()
     session = Session(bind=engine)
-    first = session.query(State).first()
-    if first:
-        print(f"{first.id}: {first.name}")
+    for s in session.query(State).filter(State.name.like("%a%")):
+        print(f"{s.id}: {s.name}")
