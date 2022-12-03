@@ -1,23 +1,12 @@
 #!/usr/bin/python3
+
+"""Start link class to table in database 
 """
-Using SQLAlchemy to define a database schema.
-"""
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine, Column, Integer, String
 import sys
+from model_state import Base, State
 
+from sqlalchemy import (create_engine)
 
-Base = declarative_base()
-
-
-class State(Base):
-    """
-    Defining the database schema
-    """
-    __tablename__ = 'states'
-
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(128), nullable=False)
 
 
 if __name__ == "__main__":

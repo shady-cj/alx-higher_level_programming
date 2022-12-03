@@ -316,7 +316,7 @@ Write a python file that contains the class definition of a State and an instanc
 
 
 
-**Files** - 6-model_state.py
+**Files** - 6-model_state.py, model_state.py
 
 
 ```
