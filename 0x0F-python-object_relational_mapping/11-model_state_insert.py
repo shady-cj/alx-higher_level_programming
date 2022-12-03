@@ -19,3 +19,4 @@ if __name__ == "__main__":
     s = State(name="Louisiana")
     session.add(s)
     session.commit()
+    print(s.id)
