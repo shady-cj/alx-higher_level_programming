@@ -17,7 +17,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker()
     session = Session(bind=engine)
-    states = session.query(State).filter(State.name.like("%a%")).all()
+    states = session.query(State).\
+        filter(text("states.name like binary '%a%'")).all()
 
     for s in states:
         session.delete(s)
