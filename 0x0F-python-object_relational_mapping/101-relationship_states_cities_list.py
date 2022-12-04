@@ -16,9 +16,11 @@ if __name__ == "__main__":
     engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)()
-    states = session.query(State).all()
+    states = session.query(State).order_by(State.id).all()
 
     for s in states:
         print(f'{s.id}: {s.name}')
-        for city in s.cities:
+        for city in session.query(City)\
+                .filter(City.name.in_([c.name for c in s.cities]))\
+                .order_by(City.id):
             print(f"    {city.id}: {city.name}")
