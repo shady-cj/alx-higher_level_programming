@@ -15,8 +15,7 @@ if __name__ == "__main__":
         .format(sys.argv[1], sys.argv[2], sys.argv[3])
     engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = sessionmaker(bind=engine)()
     
     states = session.query(State).all()
 
