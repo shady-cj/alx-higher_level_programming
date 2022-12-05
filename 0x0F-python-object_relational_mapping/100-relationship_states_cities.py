@@ -16,9 +16,9 @@ if __name__ == "__main__":
     engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)()
-    state = State(name = "California")
+    state = State(name="California")
     state.cities = [
-        City(name = "San Francisco")
+        City(name="San Francisco")
     ]
     session.add(state)
     session.commit()
