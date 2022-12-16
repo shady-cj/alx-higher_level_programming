@@ -1,3 +1,3 @@
 #!/bin/bash
-# display methods accepted by a server
+# displays the status code by d server
 curl -sL -o /dev/null -w "%{http_code}" "$1" 
