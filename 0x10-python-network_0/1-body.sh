@@ -1,3 +1,3 @@
 #!/bin/bash
 # use curl to display content
-curl -s "$1"
+curl -sL "$1"
