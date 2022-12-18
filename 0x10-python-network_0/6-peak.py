@@ -5,33 +5,7 @@ list of unsorted integers
 """
 
 
-def findPeakRecursive(nums, lo, hi):
-    """
-    Using recursion to effectively search
-    for the peak element using the divide and
-    conquer algorithm
-    """
-    mid = (lo + hi) // 2
-    left = mid - 1
-    right = mid + 1
-    if left < 0 and nums[mid] >= nums[right]:
-        return mid
-    elif right >= len(nums) and nums[mid] >= nums[left]:
-        return mid
-    elif nums[mid] >= nums[left] and nums[mid] >= nums[right]:
-        return mid
-
-    if lo == hi:
-        return None
-    searchLeft = findPeakRecursive(nums, lo, mid)
-    searchRight = findPeakRecursive(nums, mid + 1, hi)
-    if searchLeft is None:
-        return searchRight
-    else:
-        return searchLeft
-
-
-def find_peak(list_of_integers):
+def find_peak(list_of_integers, lo=None, hi=None):
     """
     Implementing the find_peak function
     """
@@ -39,7 +13,25 @@ def find_peak(list_of_integers):
         return None
     if len(list_of_integers) == 1:
         return list_of_integers[0]
-    index = findPeakRecursive(list_of_integers, 0, len(list_of_integers) - 1)
-    if index is not None:
-        return list_of_integers[index]
-    return None
+    if lo is None and hi is None:
+        lo = 0
+        hi = len(list_of_integers) - 1
+    mid = (lo + hi) // 2
+    left = mid - 1
+    right = mid + 1
+    if left < 0 and list_of_integers[mid] >= list_of_integers[right]:
+        return list_of_integers[mid]
+    elif right >= len(list_of_integers) and\
+            list_of_integers[mid] >= list_of_integers[left]:
+        return list_of_integers[mid]
+    elif list_of_integers[mid] >= list_of_integers[left] and\
+            list_of_integers[mid] >= list_of_integers[right]:
+        return list_of_integers[mid]
+    if lo == hi:
+        return None
+
+    searchLeft = find_peak(list_of_integers, lo, mid)
+    searchRight = find_peak(list_of_integers, mid + 1, hi)
+    if searchLeft is None:
+        return searchRight
+    return searchLeft
