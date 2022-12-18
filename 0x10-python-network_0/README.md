@@ -1,5 +1,4 @@
 # 0x10-python-network_0
-# Python - Network #0
 
 In this networking project, I used `curl` in Bash scripts to send various types
 of HTTP headers. In the process, I learned about how URL's work, domain names,
