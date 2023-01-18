@@ -8,9 +8,10 @@ let fs = require("fs");
 
 if (!process.argv[2])
 	process.exit();
-fs.readFile(process.argv[1], 'utf8', (err, data) => {
+fs.readFile(process.argv[2], 'utf8', (err, data) => {
 	if (err)
-		throw err;
-	console.log(data.toString())
+		console.log(err);
+	else
+		console.log(data.toString());
 }
 )
