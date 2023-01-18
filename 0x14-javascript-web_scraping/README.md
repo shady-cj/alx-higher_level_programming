@@ -75,3 +75,24 @@ guillaume@ubuntu:~/0x14$ ./2-statuscode.js https://alx-intranet.hbtn.io/doesnt_e
 code: 404
 guillaume@ubuntu:~/0x14$ 
 ```
+
+
+
+## 3. Star wars movie title
+Write a script that prints the title of a Star Wars movie where the episode number matches a given integer.
+
+The first argument is the movie ID
+You must use the Star wars API with the endpoint `https://swapi-api.alx-tools.com/api/films/:id`
+You must use the module request
+
+
+**File** - 3-starwars_title.js
+
+
+```
+guillaume@ubuntu:~/0x14$ ./3-starwars_title.js 1
+A New Hope
+guillaume@ubuntu:~/0x14$ ./3-starwars_title.js 5
+Attack of the Clones
+guillaume@ubuntu:~/0x14$
+```
