@@ -12,9 +12,8 @@ const fs = require('fs');
 
 request(process.argv[2], function (error, res, body) {
   if (error) { console.log(error); } else {
-   fs.writeFile(process.argv[3], body, {encoding: 'utf8'}, (err) => {
-      if (err)
-         console.error(err);
-   })
+    fs.writeFile(process.argv[3], body, { encoding: 'utf8' }, (err) => {
+      if (err) { console.error(err); }
+    });
   }
 });
