@@ -15,19 +15,19 @@ request(`https://swapi-api.alx-tools.com/api/films/${process.argv[2]}`, function
     const fetchCharacters = async () => {
       for (const characterUrl of characters) {
         const promise = new Promise((resolve, reject) => {
-            request(characterUrl, (error, res, body) => {
+          request(characterUrl, (error, res, body) => {
             if (error) {
-              reject(error)
+              reject(error);
             } else {
               const karacter = JSON.parse(body);
               resolve(karacter.name);
-	   } 
-           });
-	});
+            }
+          });
+        });
         const response = await promise;
         console.log(response);
       }
-    }
+    };
     fetchCharacters();
   }
 });
